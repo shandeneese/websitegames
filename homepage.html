@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game store</title>
+  <link rel="icon" href="img/shit.jpg">
+</head>
+  <style>
+      /* Page body styling */
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(img/2f6ba133-6c6f-41f4-ac4b-d255b6956f83.jpg); 
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    /* Reusable section wrapper */
+    .section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 750px;
+      margin: auto;
+    }
+    /* Hide all slides by default */
+    .slides {
+      display: none;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    /* Download button inside slides */
+    .download-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      padding: 10px 15px;
+      background-color: rgba(0, 123, 255, 0.9);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+    }
+    /* Specific styling for left and right buttons */
+    .prev { left: 0; border-radius: 0 3px 3px 0; }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
+    /* Dots under slideshow */
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+    /* Horizontal divider line */
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+    /* Top-up section styling */
+    .topup-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .topup-gallery a {
+      display: block;
+      width: 150px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .topup-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .topup-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+        /* Gaming product section styling */
+    .gaming-product {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gaming-product a {
+      display: block;
+      width: 150px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .gaming-product img {
+      width: 90%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gaming-product img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+  </style>
+<body>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  
+
+
+
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+<!-- Navigation bar with links and dropdown using Alpine.js -->
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+    <!-- Dropdown button -->
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Dropdown content -->
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+
+
+
+</div>
+  <hr class="divider">
+  <h1 style="font-size: 50px; text-align: center; font-family: 'stylish';">GAMES</h1>
+  <!-- Slideshow section -->
+  <div class="section">
+    <div class="slideshow-container">
+      <div class="slides">
+        <img src="img/codm.jpg" alt="CODM">
+        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.garena.game.codm">Download Now</a>
+      </div>
+      <div class="slides">
+        <img src="img/hok.jpg" alt="HOK">
+        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.levelinfinite.sgameGlobal">Download Now</a>
+      </div>
+      <div class="slides">
+        <img src="img/valo.webp" alt="Valorant">
+        <a class="download-btn" href="https://playvalorant.com/en-us/download/">Download Now</a>
+      </div>
+      <div class="slides">
+        <img src="img/mll.webp" alt="MLBB">
+        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.mobile.legends">Download Now</a>
+      </div>
+      <div class="slides">
+        <img src="img/roblox.png" alt="Roblox">
+        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.roblox.client">Download Now</a>
+      </div>
+    <!-- Repeat for each game -->
+    <!-- ... Other slides ... -->
+    <!-- Navigation arrows -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  <!-- Dots under the slideshow -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+    </div>
+  </div>
+  <br>
+  <hr class="divider">
+  <div class="section">
+    <h1 style="font-size: 50px;  font-family: 'stylish';">TOP UP</h1>
+    <!-- More top-up cards -->
+    <div class="topup-gallery">
+          <!-- Each image links to a top-up page -->
+      <a href="ml.html" target="_self">
+        <img src="img/mlicon.jpg" alt="Top Up 1">
+      </a>
+      <a href="valo.html" target="_self">
+        <img src="img/iconvalo.png" alt="Top Up 2">
+      </a>
+      <a href="rob.html" target="_self">
+        <img src="img/iconrob.webp" alt="Top Up 3">
+      </a>
+      <a href="hok.html" target="_self">
+        <img src="img/iconhok.webp" alt="Top Up 4">
+      </a>
+      <a href="codm.html" target="_self">
+        <img src="img/iconcodm.png" alt="Top Up 5">
+      </a>
+    </div>
+    <!-- More top-up cards -->
+      <div class="topup-gallery">
+      <a href="genshin.html" target="_self"> <img src="img/icongenshin.jpg" alt="Top Up 6"></a>
+      <a href="state.html" target="_self"> <img src="img/iconstate.png" alt="Top Up 7"></a>
+      <a href="dota.html" target="_self"> <img src="img/icondota.png" alt="Top Up 8"></a>
+      <a href="free.html" target="_self"> <img src="img/iconfree.webp" alt="Tp Up 9"></a>
+      <a href="coc.html" target="_self"> <img src="img/iconcocc.jpg" alt="Top Up 10"></a>
+    </div>
+<br><br><br>
+    <hr class="divider">
+     <!-- Gaming Products Section -->
+    <h1 style="font-size: 50px; text-align: center; font-family: 'stylish';">GAMING PRODUCT</h1>
+<div class="gaming-product">
+      <!-- Each product image links to a detailed page -->
+      <a href="mouse.html" target="_self">
+        <img src="img/mouse.webp" alt="gaming product 1">
+      </a>
+      <a href="heads.html" target="_self">
+        <img src="img/heads.jpg" alt="gaming product 2">
+      </a>
+      <a href="desktab.html" target="_self">
+        <img src="img/des.jpg" alt="gaming product 3">
+      </a>
+      <a href="chair.html" target="_self">
+        <img src="img/chair.jpg" alt="gaming product 4">
+      </a>
+    </div>
+      <div class="gaming-product">
+      <a href="controll.html" target="_self">
+        <img src="img/contr.jpg" alt="gaming product 5">
+      </a>
+      <a href="keyb.html" target="_self">
+        <img src="img/keyboard.jpg" alt="gaming product 6">
+      </a>
+      <a href="monit.html" target="_self">
+        <img src="img/rog.webp" alt="gaming product 7">
+      </a>
+      <a href="comset.html" target="_self">
+        <img src="img/fullset.webp" alt="gaming product 8">
+      </a>
+    </div>
+    <br>
+    <!-- JavaScript for slideshow functionality -->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+  // Show next/previous slide
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  // Show specific slide
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+  // Core slideshow logic
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";  
+      dots[slideIndex - 1].className += " active";
+    }
+  // Auto-play every 6 seconds
+    setInterval(() => { plusSlides(1); }, 6000);
+  </script>
+</head>
+</body>
+</html>

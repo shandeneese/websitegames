@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Articles</title>
+  <link rel="icon" href="img/shit.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10">
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Mouses Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <a href="#modal1" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (1).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">SM600 white wireless gaming mouse with a honeycomb shell</h3>
+        <div class="text-red-500 font-bold">$199 <span class="text-gray-400 line-through">$229</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal2" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (second).gif" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">SM802 white wireless gaming mouse with a honeycomb shell design</h3>
+        <div class="text-red-500 font-bold">$100 <span class="text-gray-400 line-through">$150</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal3" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (2).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gamer Fanatic Q15 RGB Wireless Gaming Mouse</h3>
+        <div class="text-red-500 font-bold">$130 <span class="text-gray-400 line-through">$230</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal4" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (3).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">RisoPhy Lightweight Gaming Mouse features a PAW3395 sensor</h3>
+        <div class="text-red-500 font-bold">$200 <span class="text-gray-400 line-through">$500</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal5" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (1).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon M918AK 3-Mode Wireless Gaming Mouse</h3>
+        <div class="text-red-500 font-bold">$299 <span class="text-gray-400 line-through">$350</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal6" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (4).gif" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon M719 Antonium</h3>
+        <div class="text-red-500 font-bold">$199 <span class="text-gray-400 line-through">$299</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal7" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (5).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon M612 Predator RGB gaming mouse</h3>
+        <div class="text-red-500 font-bold">$650 <span class="text-gray-400 line-through">$750</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal8" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (2).jpg " alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">XVX G705 Kanagawa Themed Wired Gaming Mouse</h3>
+        <div class="text-red-500 font-bold">$475<span class="text-gray-400 line-through">$675</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal9" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (3).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Rocksoul RSMS-00115 6D Optical Gaming Mouse</h3>
+        <div class="text-red-500 font-bold"> $823 <span class="text-gray-400 line-through">$923</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal10" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/MOUSE.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Frontech MS-0050 wired USB gaming mouse</h3>
+        <div class="text-red-500 font-bold">$265<span class="text-gray-400 line-through">$365</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (1).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">SM600 white wireless gaming mouse with a honeycomb shell</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $199 <span class="text-gray-400 line-through text-sm">$299</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Connectivity: Tri-mode (Bluetooth 5.1, 2.4GHz wireless, and Type-C wired).</li>
+            <li>DPI: Adjustable, with up to 8000 DPI.</li>
+            <li>Design: Lightweight honeycomb shell for comfort and ventilation.</li>
+            <li>Features: Side buttons, programmable macros, and RGB lighting.</li>
+            <li>Battery: Up to 20 days of battery life.</li>
+            <li>Compatibility: Supports PC, Mac, laptops, tablets, and desktops.</li>
+            <li>Ergonomics: Designed for comfortable, long-term use.</li>
+            <li>Color Options: Available in black, pink, green and white.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (second).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">SM802 white wireless gaming mouse with a honeycomb shell design</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $100 <span class="text-gray-400 line-through text-sm">$150</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Connectivity: Tri-mode connectivity with Bluetooth 5.1 and 2.4GHz wireless options.</li>
+            <li>Design: Lightweight honeycomb shell for enhanced heat dissipation and comfortable use.</li>
+            <li>RGB Lighting: Customizable RGB rainbow backlighting for a visually appealing experience.</li>
+            <li>DPI: Adjustable DPI up to 10000 for precise tracking.</li>
+            <li>Battery: Rechargeable battery offering extended use. </li>
+            <li>Buttons: Features side buttons for quick access to functions.</li>
+            <li>Compatibility: Compatible with PC, Mac, laptops, and tablets.</li>
+            <li>Customization: Some models offer customizable macro settings and swappable shells.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (2).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">RisoPhy Lightweight Gaming Mouse features a PAW3395 sensor</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $130 <span class="text-gray-400 line-through text-sm">$230</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Wireless: It uses a 2.4GHz wireless connection.
+            <li>RGB Lighting: It has customizable, colorful RGB lighting.</li>
+            <li>DPI: Adjustable DPI levels, typically between 1200-3200 DPI, and up to 26000 DPI available through software.</li>
+            <li>Buttons: Features multiple buttons, some programmable for customized controls.</li>
+            <li>Ergonomic Design: Designed for comfort during extended use.</li>
+            <li>Compatibility: Compatible with Windows, macOS, and other operating systems.</li>
+            <li>Battery: Rechargeable battery with a long lifespan and power-saving modes.</li>
+            <li>Durability: Built with quality materials for long-term use.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">The RisoPhy Lightweight Gaming Mouse features a PAW3395 sensor</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $200 <span class="text-gray-400 line-through text-sm">$500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Sensor: PAW3395</li>
+            <li>DPI: Up to 26K</li>
+            <li>Connectivity: Wired, 2.4 GHz, and Bluetooth</li>
+            <li>Buttons: 6 programmable buttons</li>
+            <li>Backlighting: Chroma RGB</li>
+            <li>Ergonomics: Ergonomic design</li>
+            <li>Weight: Some models are lightweight, with the Superlight version at 62g, while others weigh 190 grams.</li>+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon M918AK 3-Mode Wireless Gaming Mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $299 <span class="text-gray-400 line-through text-sm">$350</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>supports three connection modes: 2.4 GHz wireless, Bluetooth, and wired.</li>
+            <li>Type: 3-Mode Wireless Gaming Mouse</li>
+            <li>Weight: 55 grams</li>
+            <li>Programmable Buttons: 5 </li>
+            <li>Polling Rate: 1KHz</li>          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (4).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon M719 Antonium</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $199 <span class="text-gray-400 line-through text-sm">$299</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 10,000 DPI with adjustable DPI levels (500/1000/2000/3000/5000) and software-adjustable DPI from 100 to 10000.</li>
+            <li>Polling Rate: 1000 Hz, switchable to 125Hz/250Hz/500Hz.</li>
+            <li>Buttons: 8 programmable buttons (including a rapid fire button).</li>
+            <li>Backlit Modes: 8 backlight modes with 16.8 million customizable colors.</li>
+            <li>Tracking System: Optical.</li>
+            <li>Interface: USB 2.0 full speed.</li>
+            <li>Cable: 1.8M braided-fiber cable.</li>
+            <li>Software: Professional programming software for button customization, DPI, polling rate, and RGB lighting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal7" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (5).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon M612 Predator RGB gaming mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $650 <span class="text-gray-400 line-through text-sm">$750</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Sensor: Pixart P3104 optical</li>
+            <li>DPI: 500-8000 DPI </li>
+            <li>Programmable Buttons: 11</li>
+            <li>Backlit Modes: 5</li>
+            <li>Acceleration: 15G</li>
+            <li>Max Speed: 45"</li>
+            <li>Connection: Wired</li>
+            <li>Weight: 145g</li>
+            <li>Product Dimensions: 12.6L x 7.5W cm</li>
+            <li>Cable Length: 1.8m braided fiber cable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal8" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">XVX G705 Kanagawa Themed Wired Gaming Mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $475 <span class="text-gray-400 line-through text-sm">$675</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 200-12,000</li>
+            <li>Polling Rate: 125/250/500/1000Hz</li>
+            <li>Buttons: 7 programmable</li>
+            <li>Lighting: Customizable RGB lighting with 12 modes</li>
+            <li>Sensor: PixArt PMW3327</li>
+            <li>Connection: Wired, USB</li>
+            <li>Cord Length: 1.8m</li>
+            <li>Dimensions: 70x130x45mm</li>
+            <li>Weight: 95g</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal9" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (3).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Rocksoul RSMS-00115 6D Optical Gaming Mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $823 <span class="text-gray-400 line-through text-sm">$923</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>6D high-definition optical technology.</li>
+            <li>Selectable DPI (dots per inch).</li>
+            <li>3.5G infrared sensor.</li>
+            <li>2750 DPI.</li>
+            <li>Equipped with a scroll wheel.</li>
+            <li>Designed for gaming with a distinct aesthetic.</li>
+            <li>Connects via USB 2.0.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal10" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/MOUSE.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Frontech MS-0050 wired USB gaming mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $265 <span class="text-gray-400 line-through text-sm">$365</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 3600 for precise tracking.</li>
+            <li>Keys: 6 programmable keys for customized controls.</li>  
+            <li>Lighting: 7 LED lighting options for aesthetic appeal.</li>
+            <li>Connectivity: USB plug-and-play functionality.</li>
+            <li>Compatibility: Compatible with PC, desktop, Mac, and laptop.</li>
+            <li>Warranty: 1 year.</li>       
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Gaming Headset Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <a href="#modal21" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (1).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">1396.25</h3>
+        <div class="text-red-500 font-bold">$13,499 <span class="text-gray-400 line-through">$16,999</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal22" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (2).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Frassie Gaming Chair with RGB LED Lights</h3>
+        <div class="text-red-500 font-bold">$16,999 <span class="text-gray-400 line-through">$18,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal23" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (3).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support - Deep Blue</h3>
+        <div class="text-red-500 font-bold">$15,499 <span class="text-gray-400 line-through">$17,802</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal24" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (4).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Costway Office Computer Desk Chair Gaming Pink and Black</h3>
+        <div class="text-red-500 font-bold">$18,400 <span class="text-gray-400 line-through">$20,400</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal25" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (5).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest - Blue and Black</h3>
+        <div class="text-red-500 font-bold">$20,000 <span class="text-gray-400 line-through">$22,500</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal26" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (6).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Gaming Chair, Racing Style Gaming Chair</h3>
+        <div class="text-red-500 font-bold">$38,745 <span class="text-gray-400 line-through">$40,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal27" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (7).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Pro gaming chair with Cushion Upgrade - White</h3>
+        <div class="text-red-500 font-bold">$25,000 <span class="text-gray-400 line-through">$27,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal28" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (8).webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Razer Barracuda X Wireless Gaming Headset</h3>
+        <div class="text-red-500 font-bold">$4,500,00 <span class="text-gray-400 line-through">$7,500,00</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal29" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (9).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Ozeino Gaming Headset, 3D Sound Effects, Noise Eduction Microphone Green</h3>
+        <div class="text-red-500 font-bold">$1,814,23 <span class="text-gray-400 line-through">$3,814,23</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal30" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (10).webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">BENGOO G9000 Gaming Headset with Noise Cancelling Mic</h3>
+        <div class="text-red-500 font-bold">$12,470 <span class="text-gray-400 line-through">$15,000</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal21" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">TTRacing Swift X Pro Gaming Chair - Wolverine Edition</h2>
+          <p class="text-red-600 text-xl font-bold">
+            ₱13,499 <span class="text-gray-400 line-through text-sm">₱16,999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>yellow back</li>
+            <li>Achieve peak comfort with a relentless 135-degree recline</li>
+            <li>UNBREAKABLE COMFORT
+              WITH PREMIUM FOAM-PADDED ARMRESTS</li>
+            <li>EXPANSIVE ERGONOMIC EXCELLENCE IN A LEGENDARY SEAT</li>
+            <li>EXPERIENCE SAVAGE ADAMANTIUM COMFORT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal22" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Frassie Gaming Chair with RGB LED Lights, Video Game Chair Ergonomic
+           Computer Gamer Chair with Massage Lumbar Support</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $16,999 <span class="text-gray-400 line-through text-sm">$18,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Frassie</li>
+            <li>Red</li>
+            <li>20"D x 27"W x 47"H</li>
+            <li>Mid Back</li>
+            <li>Adjustable Lumbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal23" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support, Adjustable Seat Height Ergonomic,
+             Thickened and Widened Cushions Backrest, 175° Reclining Max</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $15,499 <span class="text-gray-400 line-through text-sm">$17,802</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Deep Blue</li>
+            <li>33.27"D x 22.44"W x 12.8"H</li>
+            <li>Solid Back</li>
+            <li>Ergonomic, Rolling, Cushion Availability, Foot Rest </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal24" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Costway Office Computer Desk Chair Gaming Chair Adjustable Swivel w/Footrest</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $18,400  <span class="text-gray-400 line-through text-sm">$20,400</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>49 inches (H) x 27 inches (W) x 27 inches (D)</li>
+            <li>20 inches [W] & 20 inches [D]</li>
+            <li>42 pounds</li>
+            <li>PVC (Polyvinyl Chloride) (Frame)</li>
+            <li>Adult (18 Years and Up)</li>
+            <li>Maximum Height, Floor to Seat Top: 49 inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal25" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest Big and Tall
+             Video Game Chair for Heavy People 400lb with Massager for Adults</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $20,000 <span class="text-gray-400 line-through text-sm">$22,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blue and Black</li>
+            <li>Leather</li>
+            <li>55D x 59W x 131H centimeters</li>
+            <li>18.87 kg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal26" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (6).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Gaming Chair, Racing Style Gaming Chair with Velvet Material Ergonomic Lumbar Support, 
+            Adjustable High Back PU Leather PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $38,745 <span class="text-gray-400 line-through text-sm">$40,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>pink</li>
+            <li>19"D x 15.39"W x 52"H</li>
+            <li>Wing Back</li>
+            <li>Adjustable Ergonomic</li>
+            <li>open back</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal27" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="imG/HEADS (7).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Pro gaming chair with Cushion Upgrade</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $25,000  <span class="text-gray-400 line-through text-sm">$27,000 </span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>White</li>
+            <li>Faux Leather</li>
+            <li>70D x 70W x 128H centimetres</li>
+            <li>Mecha-Stil</li>
+            <li>26.4 Kilograms</li>
+            <li>Metal</li>
+            <li>Product care instructions	Clean with a damp cloth and mild soap</li>
+            <li>Ergonomic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal28" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (8).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">RAZER BARRACUDA X HEADSET (2022)  QUARTZ PINK  WIRELESS  MULTIMODE  DETACHABLE HYPERCLEAR CARDIOID 
+            6 MONTHS WARRANTY HEADSET</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,500,00 <span class="text-gray-400 line-through text-sm">$7,500,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Pink white</li>
+            <li>Wireless USB-C Multi-Platform Connectivity</li>
+            <li>250g Ergonomic Design</li>
+            <li>Razer TriForce 40mm Drivers</li>
+            <li>Detachable Razer HyperClear Cardioid Mic</li>
+            <li>On-Headset Controls</li>
+            <li>20 Hours Battery Life with USB-C Charging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal29" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (9).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Ozeino Gaming Headset, 3D Sound Effects, Noise Eduction Microphone, 
+            Gaming Headphone for Ps4, Ps5, Xbox One, PC, Switch</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,814,23<span class="text-gray-400 line-through text-sm">$3,814,23</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>3.5 mm Jack</li>
+            <li>Green</li>
+            <li>Over Ear</li>
+            <li>32 Ohm</li>
+            <li>Active Noise Cancellation</li>
+            <li>42 dB</li>
+            <li>ZW1-GREEN-2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal30" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (10).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">BENGOO G9000 Gaming Headset with Noise Cancelling Mic, Surround Sound, LED Light,
+             Multi-Platform Compatible for PS4 PC Xbox One PS5 Controller</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $12,470 <span class="text-gray-400 line-through text-sm">$15,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blue</li>
+            <li>Adjustable Headband</li>
+            <li>Skin-friendly Earmuffs</li>
+            <li>Soft Head Beam Pad</li>
+            <li>Bass Sourround Sound</li>
+            <li>In-Line Controller</li>
+            <li>G9000 9.6 oz (272.16 grams)</li>
+            <li>3.5mm, USB</li>
+            <li>Works with	Computers</li>
+            <li>Computer Headsets, Gaming Headsets, Stereo Headsets</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Desktops Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal81" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/CORSAIR.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">CORSAIR VENGEANCE 5185 Gaming PC</h3>
+        <div class="text-red-500 font-bold">$2,599.99<span class="text-gray-400 line-through">$2,999.99</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal82" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Electrobot.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Electrobot Thunder Gaming Desktop</h3>
+        <div class="text-red-500 font-bold">$1,346.79<span class="text-gray-400 line-through">$2,346.79</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal83" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Skytech.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Skytech King 95 Gaming PC Desktop</h3>
+        <div class="text-red-500 font-bold">$1,878.85 <span class="text-gray-400 line-through">$2,878.85</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal84" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/ASUS.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">ASUS ROG Strix GT15 Gaming Desktop PC, Intel Core i7</h3>
+        <div class="text-red-500 font-bold">$1,315.63<span class="text-gray-400 line-through">$2,315.63</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal85" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/MSI.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">MSI Aegis R Gaming Desktop Computer</h3>
+        <div class="text-red-500 font-bold">$1,698.98<span class="text-gray-400 line-through">$2,698.98</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal86" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/iBUYPOWER.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">iBUYPOWER Y40 PRO Black Gaming PC Desktop Computer</h3>
+        <div class="text-red-500 font-bold">$2,649.99<span class="text-gray-400 line-through">$3,649.99</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal87" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/OMEN.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HP OMEN 45L Gaming Desktop GT22-2003d PC</h3>
+        <div class="text-red-500 font-bold">$2,700<span class="text-gray-400 line-through">$3,000</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal88" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Alienware.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Alienware Aurora R16 GeForce RTX 4090</h3>
+        <div class="text-red-500 font-bold">$3,599.99<span class="text-gray-400 line-through">$3,999.99</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal89" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Dell XPS.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Dell XPS 8920 XPS8920-7083BLK-PUS Tower Desktop</h3>
+        <div class="text-red-500 font-bold">$799.000<span class="text-gray-400 line-through">$809.99</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal90" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/acer.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Acer Predator Orion 9000</h3>
+        <div class="text-red-500 font-bold"> $6,999<span class="text-gray-400 line-through">$7,999</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal81" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/CORSAIR.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">CORSAIR VENGEANCE 5185 Gaming PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,599.99 <span class="text-gray-400 line-through text-sm">$2,999.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Networking: Gigabit Ethernet, 802.11ac, Bluetooth 4.2</il>
+            <il>GPU: NVIDIA RTX 4090</il>
+            <il>CPU: Intel Core i7-9700K</il>
+            <il>DRAM: 16GB (2x8GB) DDR4-2666</il>
+            <il>Form Factor: Micro-ATX</il>
+            <il>Operating System: Windows 10 Home</il>
+            <il>Weight: 13.26</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal82" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Electrobot.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Electrobot Thunder Gaming Desktop</h2>
+          <p class="text-red-600 text-xl font-bold">
+          $1,346.79 <span class="text-gray-400 line-through text-sm">$2,346.79</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Graphics Card. RTX 3060 Ti.</il>
+            <il>Motherboard. B550.</il>
+            <il>RAM. 16 GB 2X8GB.</il>
+            <il>Processor Speed. 12400F.</il>
+            <il>Hard Drive Size. 500GB NVME, 1 TB HDD.</il>
+            <il>Hard Drive Size Type. TB.</il>
+            <il>RAM Type. DDR4.</il>
+            <il>Processor Count.</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal83" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Skytech.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Skytech King 95 Gaming PC Desktop</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,878.85 <span class="text-gray-400 line-through text-sm">$2,878.85</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Manufacturer Part#: ST-KING95-1356-W-NE</il> 
+            <il>Processor: Ryzen 7 7800X3D 4.2 GHz (5GHz Turbo Boost) CPU</il>
+            <il>Memory: 32GB DDR5 RAM RGB Gaming Memory with Heat Spreader</il>
+            <il>Graphics: NVIDIA Geforce RTX 4070 Super 12GB GDDR6X Graphics Card (Brand may vary)</il>
+            <il>SSD: 1TB Gen4 NVMe M.2 SSD</il>
+            <il>Operating System: Microsoft windows 11 Home 64-bit</il>
+            <il>Case: King 95 Case - White</il>
+            <il>Wireless Support: 802.11AC</il>
+            <il>Fans: ARGB Fans for Maximum Cooling Performance</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal84" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/ASUS.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">ASUS ROG Strix GT15 Gaming Desktop PC, Intel Core i7</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,315.63 <span class="text-gray-400 line-through text-sm">$2,315.63</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>CPU: Intel Core i9-13900K</il>
+            <il>GPU: NVIDIA RTX 4080</il>
+            <il>RAM: 32GB DDR5</il>
+            <il>Storage: 1TB SSD + 2TB HDD</il>
+            <il>Style: HP’s RGB glam + Acer’s thermal mastery</il>
+            <il>Why? Lights up the room and demolishes AAA games.</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal85" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/MSI.jpg "alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">MSI Aegis R Gaming Desktop Computer </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,698.98 <span class="text-gray-400 line-through text-sm">$2,698.98</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Processor: Intel Core i7-14700F, 13th Gen Intel Core i7 or 14th Gen Intel Core i9
+            <il>Memory: 16GB or 32GB DDR5 RAM</il>
+            <il>Storage: 1TB or 2TB M.2 NVMe SSD</il>
+            <il>Graphics: NVIDIA GeForce RTX 4060, RTX 4070, or RTX 4070 Super</il>
+            <il>Operating System: Windows 11 Home</il>
+            <il>Case: Gungnir series case with ARGB lighting</il>
+            <il>Cooling: Air cooler or liquid cooler depending on the model</il>
+            <il> Power Supply: 650W or 750W 80+ Gold</il>
+            <il>Ports: 3x DisplayPort, 1x HDMI, multiple USB ports</il>
+            <il>Networking: 2.5Gb Ethernet, Wi-Fi 6 or Wi-Fi 7</il>
+            <il>Other: Bluetooth 5.1 or 5.4</il> 
+          </ul>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal86" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/iBUYPOWER.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">iBUYPOWER Y40 PRO Black Gaming PC Desktop Computer</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,649.99 <span class="text-gray-400 line-through text-sm">$3,649.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Operating System: Windows 11 Home</il>
+            <il>CPU Model: Intel Core Ultra 7</il>
+            <il>CPU Speed: 5.4 GHz</il>
+            <il>Graphics Card Description: Dedicated</il>
+            <il>Graphics Coprocessor: NVIDIA GeForce RTX 4060 Ti 8GB</il>
+            <il>Memory Storage Capacity: 2 TB</il>
+            <il>Memory Slots Available: 4</il>
+            <il>Specific Uses For Product: Gaming</il>
+            <il>Personal computer design type: Computer Tower</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal87" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/OMEN.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HP OMEN 45L Gaming Desktop GT22-2003d PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $2,700 <span class="text-gray-400 line-through text-sm">$3,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Intel® Core™ i7 14th generation processor\</il>
+            <il>Windows 11 Home Single Language in S mode</il>
+            <il>Kingston FURY 16 GB DDR5-5200 MHz XMP RGB Heatsink RAM</il>
+            <il>1 TB WD Black PCIe® Gen4 NVMe™ TLC M.2 SSD Hard drive</il>
+            <il>NVIDIA® GeForce RTX™ 4080</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal88" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Alienware.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Alienware Aurora R16 GeForce RTX 4090</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $3,599.99 <span class="text-gray-400 line-through text-sm">$3,999.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Intel® Core™ i9 14900KF (68 MB cache, 24 cores, up to 6.0 GHz P-Core Thermal Velocity)</il>
+            <il>Windows 11 Home, English, French, Spanish</il>
+            <il>NVIDIA® GeForce RTX™ 4090, 24 GB GDDR6X</il>
+            <il>64GB Dual Channel DDR5 (2x 32GB - Green) 5200 MT/s</il>
+            <il>2 TB, M.2, PCIe NVMe, SSD</il>
+            <il>1000W Platinum Rated PSU, 240mm Liquid-Cooled CPU & Clear Side Panel</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal89" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Dell XPS.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Dell XPS 8920 XPS8920-7083BLK-PUS Tower Desktop</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $799.00 <span class="text-gray-400 line-through text-sm">$809.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>11th Gen Intel Core i7-11700 8-core up to 4.9 GHz CPU</il>
+            <il>32GB RAM, 1TB SSD</il>
+            <il>Intel UHD Graphics 750</il>
+            <il>Killer Wi-Fi 6</il>
+            <il>DVD Burner</il>
+            <il>Windows 11 Pro</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal90" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/acer.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Acer Predator GalaxyX</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $6,999 <span class="text-gray-400 line-through text-sm">$7,999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Intel® Core™ i7-14700HX processor.</il>
+            <il>16GB RAM.</il>
+            <il>512GB SSD.</il>
+            <il>16.0" display.</il>
+            <il>NVIDIA® GeForce RTX™ 4060.</il>
+            <il>FineTip RGB-backlight keyboard.</il>
+            <il>Windows 11 Home.</il>
+            <il>2 Years Warranty.</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Gaming chair Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal11" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (1).webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">TTRacing Swift X Pro Gaming Chair - yellow back</h3>
+        <div class="text-red-500 font-bold">$13,499 <span class="text-gray-400 line-through">$16,999</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal12" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (2).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Frassie Gaming Chair with RGB LED Lights</h3>
+        <div class="text-red-500 font-bold">$16,999 <span class="text-gray-400 line-through">$18,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal13" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (3).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support - Deep Blue</h3>
+        <div class="text-red-500 font-bold">$15,499 <span class="text-gray-400 line-through">$17,802</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal14" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (4).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Costway Office Computer Desk Chair Gaming Pink and Black</h3>
+        <div class="text-red-500 font-bold">$18,400 <span class="text-gray-400 line-through">$20,400</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal15" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (5).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest - Blue and Black</h3>
+        <div class="text-red-500 font-bold">$20,000 <span class="text-gray-400 line-through">$22,500</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal16" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (6).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Gaming Chair, Racing Style Gaming Chair</h3>
+        <div class="text-red-500 font-bold">$38,745 <span class="text-gray-400 line-through">$40,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal17" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (7).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Pro gaming chair with Cushion Upgrade - White</h3>
+        <div class="text-red-500 font-bold">$25,000 <span class="text-gray-400 line-through">$27,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal18" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (8).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gaming Chair High Back Ergonomic Computer Racing Chair Blackblue</h3>
+        <div class="text-red-500 font-bold">$17,100 <span class="text-gray-400 line-through">$19,100</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal19" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img//chair (9).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">VANSPACE RGB Gaming Chair with Bluetooth Speakers and LED Lights Ergonomic Massage Computer Game Chair - Red black</h3>
+        <div class="text-red-500 font-bold">$3,525,989 <span class="text-gray-400 line-through">$4,925,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal20" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (10).webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Epic Gamers Scorpion Hydraulic Gaming Chair-Black</h3>
+        <div class="text-red-500 font-bold">$450,500 <span class="text-gray-400 line-through">$500,000</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal11" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (1).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">TTRacing Swift X Pro Gaming Chair - Wolverine Edition</h2>
+          <p class="text-red-600 text-xl font-bold">
+            ₱13,499 <span class="text-gray-400 line-through text-sm">₱16,999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>yellow back</li>
+            <li>Achieve peak comfort with a relentless 135-degree recline</li>
+            <li>UNBREAKABLE COMFORT
+              WITH PREMIUM FOAM-PADDED ARMRESTS</li>
+            <li>EXPANSIVE ERGONOMIC EXCELLENCE IN A LEGENDARY SEAT</li>
+            <li>EXPERIENCE SAVAGE ADAMANTIUM COMFORT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal12" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Frassie Gaming Chair with RGB LED Lights, Video Game Chair Ergonomic
+           Computer Gamer Chair with Massage Lumbar Support</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $16,999 <span class="text-gray-400 line-through text-sm">$18,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Frassie</li>
+            <li>Red</li>
+            <li>20"D x 27"W x 47"H</li>
+            <li>Mid Back</li>
+            <li>Adjustable Lumbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal13" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support, Adjustable Seat Height Ergonomic,
+             Thickened and Widened Cushions Backrest, 175° Reclining Max</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $15,499 <span class="text-gray-400 line-through text-sm">$17,802</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Deep Blue</li>
+            <li>33.27"D x 22.44"W x 12.8"H</li>
+            <li>Solid Back</li>
+            <li>Ergonomic, Rolling, Cushion Availability, Foot Rest </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal14" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Costway Office Computer Desk Chair Gaming Chair Adjustable Swivel w/Footrest</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $18,400  <span class="text-gray-400 line-through text-sm">$20,400</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>49 inches (H) x 27 inches (W) x 27 inches (D)</li>
+            <li>20 inches [W] & 20 inches [D]</li>
+            <li>42 pounds</li>
+            <li>PVC (Polyvinyl Chloride) (Frame)</li>
+            <li>Adult (18 Years and Up)</li>
+            <li>Maximum Height, Floor to Seat Top: 49 inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal15" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest Big and Tall
+             Video Game Chair for Heavy People 400lb with Massager for Adults</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $20,000 <span class="text-gray-400 line-through text-sm">$22,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blue and Black</li>
+            <li>Leather</li>
+            <li>55D x 59W x 131H centimeters</li>
+            <li>18.87 kg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal16" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (6).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Gaming Chair, Racing Style Gaming Chair with Velvet Material Ergonomic Lumbar Support, 
+            Adjustable High Back PU Leather PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $38,745 <span class="text-gray-400 line-through text-sm">$40,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>pink</li>
+            <li>19"D x 15.39"W x 52"H</li>
+            <li>Wing Back</li>
+            <li>Adjustable Ergonomic</li>
+            <li>open back</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal17" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (7).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Pro gaming chair with Cushion Upgrade</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $25,000  <span class="text-gray-400 line-through text-sm">$27,000 </span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>White</li>
+            <li>Faux Leather</li>
+            <li>70D x 70W x 128H centimetres</li>
+            <li>Mecha-Stil</li>
+            <li>26.4 Kilograms</li>
+            <li>Metal</li>
+            <li>Product care instructions	Clean with a damp cloth and mild soap</li>
+            <li>Ergonomic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal18" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (8).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gaming Chair High Back Ergonomic Computer Racing Chair Adjustable Office Chair with
+             Footrest, Lumbar Support Swivel</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $17,100 <span class="text-gray-400 line-through text-sm">$19,100</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blackblue</li>
+            <li>Leather Polyvinyl Chloride</li>
+            <li>Upgraded Version w/Thickened Footrest</li>
+            <li>21.84 kg</li>
+            <li>Polyvinyl Chloride</li>
+            <li>Ergonomic, Rolling, Cushion Availability</li>
+            <li>Seat material type	Leather</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal19" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (9).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">VANSPACE RGB Gaming Chair with Bluetooth Speakers and LED Lights Ergonomic Massage Computer Game Chair with
+             Footrest High Back Music Video Game Chair with Lumbar Support</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $3,525,989 <span class="text-gray-400 line-through text-sm">$4,925,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Red+black</li>
+            <li>Leather Suede</li>
+            <li>Adjustable Lumbar, Adjustable Height, Adjustable Headrest, 
+            Adjustable Backrest, Foot Rest</li>
+            <li>Wipe Clean</li>
+            <li>1.0 Count</li>
+            <li>Memory Foam</li>
+            <li>Recommended Uses For Product	Office</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal20" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (10).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Epic Gamers Scorpion Hydraulic Gaming Chair-Black</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $450,500 <span class="text-gray-400 line-through text-sm">$500,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li> 280lbs / 125 kg</li>
+            <li>
+              32:9 Single ultra-wide curved monitor up to 49"
+              21:9 Single Ultra-wide monitor up to 38"
+              16:9 Single monitor up to 32"
+              16:9 Triple monitors up to 3*29"
+              Weight up to 53lbs/ 24kg total
+              Height up to 17" /43cm With VESA holes centered
+              VESA Spec: 75x75mm ,100x 100mm</li>
+            <li>High Quality steel with powder coated paint</li>
+            <li>PU Leather & High Density Cold PU Foam</li>
+            <li>Tiltling to 160 degree,Monitor height</li>
+            <li>Keyboard open/close
+              Armrests open/close</li>
+            <li>Cup holder,headset hanger</li>
+            <li>Approx.352 lbs / 160kg</li>
+            <li>Approx.418 lbs / 190kg</li>
+            <li>61"x27"x45" 360lbs
+              155x70x120cm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Gaming Controllers Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <a href="#modal111" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 10.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Xbox Wireless Controller Shock Red + Xbox Play & Charge Kit M</h3>
+        <div class="text-red-500 font-bold">$4,756 <span class="text-gray-400 line-through">$5,739</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal112" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 9.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Wireless Game Controller Transparent Gamepad - LOVNOV Rainbow Gaming Controller RGB Light for iOS, Android,</h3>
+        <div class="text-red-500 font-bold">$1500.99 <span class="text-gray-400 line-through">$3500.99</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal113" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 8.webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">WIRELESS PERFORMANCE XBOX CONTROLLER</h3>
+        <div class="text-red-500 font-bold">$4,500 <span class="text-gray-400 line-through">$6,499</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal114" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 7.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Xbox Soft Touch Design Custom Gaming Controller -Soft Shell for Comfort Grip X for Microsoft Xbox (Waves)</h3>
+        <div class="text-red-500 font-bold">$7,998 <span class="text-gray-400 line-through">$9,998</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal115" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (6).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">EasySMX X20 Wireless Gaming Controller with RGB Backlit, 2-Stage Hall Effect Stick</h3>
+        <div class="text-red-500 font-bold">$5,000 <span class="text-gray-400 line-through">$6,000</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal116" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (5).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">EasySMX X05 Wireless Controller for PC/Android/Steam Deck- Bluetooth Controller Gamepad with Hall Effect Joysticks</h3>
+        <div class="text-red-500 font-bold">$2,700 <span class="text-gray-400 line-through">$3,800</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal117" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (4).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">BINBOKPLAY Switch Controller, Wireless Switch Pro Controller for Switch/Switch Lite/Switch OLED</h3>
+        <div class="text-red-500 font-bold">$13,159 <span class="text-gray-400 line-through">$15,096.90</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal118" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (3).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">IINE Aphrodite's Bloom Wireless Controller with Charging Dock</h3>
+        <div class="text-red-500 font-bold">$3,300.00<span class="text-gray-400 line-through">$4,500,00</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal119" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (2).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Controller Gamepad for Switch, PC, for iOS, for Android, Game Controller, Wireless Pro Controller, Gamepad</h3>
+        <div class="text-red-500 font-bold"> $1,823 <span class="text-gray-400 line-through">$2,923</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal110" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (1).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gamesir T4n Pro Super Nova Multi-Platform Wireless Game Controller</h3>
+        <div class="text-red-500 font-bold">$1,595.00<span class="text-gray-400 line-through">$2,895.00</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal111" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 10.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Xbox Wireless Controller Shock Red + Xbox Play & Charge Kit M</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,756 <span class="text-gray-400 line-through text-sm">$5,739</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>The new hybrid D-Pad allows for accurate yet familiar input</li>
+            <li>Thanks to the new share button, you can easily record and share content such as screenshots during the game.</li>
+            <li>The 3.5 mm stereo headset jack allows you to connect compatible headsets and headphones.</li>
+            <li>Always stay in the game with the Xbox Play & Charge Kit + USB-C cable.</li>
+            <li>Charge during or after your game, even when your Xbox is in standby.</li>
+            <li>The long-lasting, rechargeable battery is fully charged after under 4 hours.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal112" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 9.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Wireless Game Controller Transparent Gamepad - LOVNOV Rainbow Gaming Controller RGB Light for iOS, Android, Nintendo Switch, P5, P4, P3, PC, Dual Motor See Through Gamepad Controller</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1500.99 <span class="text-gray-400 line-through text-sm">$3500.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Introducing the ultimate gaming controller that takes your gaming experience to new heights - the LOVNOV Multi-Platform Gaming Controller. Engineered to perfection, this controller is designed to work seamlessly across various platforms, ensuring compatibility with iOS 13.4+, Android 6.0+, Win7.0+, and a plethora of devices including iPhone, iPad, Samsung Galaxy series, Huawei, OPPO, VIVO, One Plus, tablets, PCs, MacBooks, notebooks, laptops, Nintendo Switch/Lite/Oled, and P3/P4/P5. Whether you're a mobile gamer, console enthusiast, or PC gamer, this controller has got you covered</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal113" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 8.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">WIRELESS PERFORMANCE XBOX CONTROLLER</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,500 <span class="text-gray-400 line-through text-sm">$6,499</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>High-Performance Grip.</li>
+            <li>Four Remappable Paddles.</li>
+            <li>Wireless and Wired Connectivity..</li>
+            <li>Removeable Faceplate.</li>
+            <li>lnterchangeable Thumbsticks..</li>
+            <li>Rumbles in.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal114" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 7.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Xbox Soft Touch Design Custom Gaming Controller -Soft Shell for Comfort Grip X for Microsoft Xbox (Waves)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $7,998 <span class="text-gray-400 line-through text-sm">$9,998</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>1 lbs (450 grams)</li>
+            <li>2021-05-15 22:17:13</li>
+            <li>Enhance your gaming experience with the Xbox Custom Modded Rapid Fire Controller. Designed with a soft shell for a comfortable grip, this custom Xbox controller is perfect for extended gaming sessions. Featuring the largest variety of modes, including the Flames mode, this controller allows you to dominate the competition.</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal115" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (6).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">EasySMX X20 Wireless Gaming Controller with RGB Backlit, 2-Stage Hall Effect Stick, 1000Hz Polling Rate, 6-Axis Gyro on Multi-Platform,</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $5,000 <span class="text-gray-400 line-through text-sm">$6,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Buttons- Compatible with PC/Switch/Steam/Android</li>
+            <li>Elite 2-Way Trigger Lock: Customize trigger sensitivity with two adjustable positions for faster</li>
+            <li>Detachable Hall Sticks: Enhance your controller's versatility with thumbsticks that can be detached</li>
+            <li>Ultra-Fast 1000Hz Polling Rate: Achieve virtually no input lag with a 1000Hz polling rate in both wired and 2.4G wireless modes</li>
+            <li>Full Mecha-tactile Buttons: Enjoy the distinct clicky feedback and quicker responses from mechanical buttons on the action buttons (ABXY)</li>          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal116" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">EasySMX X05 Wireless Controller for PC/Android/Steam Deck- Bluetooth Controller Gamepad with Hall Effect Joysticks and Trigger,Turbo,Rumble Vibration</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,700  <span class="text-gray-400 line-through text-sm">$3,800 </span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>RGB Lighting</li>
+            <li>The X05 game controller features RGB lighting effects </li>
+            <li>Enjoy enhanced joystick control with our four hall effect sensors</li>
+            <li>Your X05 PC controller's ceramic charging cable ensures a stable and reliable wireless connection</li>
+            <li>Compared to traditional polymer lithium-ion batteries</li>
+            <li>Our controller is designed to be compatible with various platforms, including PC, Switch, iPhone and Android.</li>
+            <li>The game controller offers a mode switch key, allowing you to seamlessly switch between different modes or configurations to suit their gaming preferences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal117" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">BINBOKPLAY Switch Controller, Wireless Switch Pro Controller for Switch/Switch Lite/Switch OLED, RGB Adjustable LED Wireless Remote Gamepad with 
+            Unique Crack/Motion Control/Turbo/ALPS Joystick</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $13,159 <span class="text-gray-400 line-through text-sm">$15,096.90</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Upgraded Lighting Effects and Comfortable Surface】BINBOKPALY upgraded the surface material and
+                 crackle effect of the wireless switch pro controller,</li>
+            <li>Back Programmable Button】The BINBOKPLAY Switch pro Controller comes with two additional buttons on the back
+                 that can be mapped for single button or macro functions. </li>
+            <li>Experience gaming at its finest with the ALPS joystick imported from Japan. Switch Pro 
+                Controller is designed with a ALPS joystick rotation lifespan of over 2,000,000 rotations.</li>
+            <li>Acceleration: The BINBOKPLAY Switch Controllers features a no-dead zone mode that responds </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal118" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">IINE Aphrodite's Bloom Wireless Controller with Charging Dock</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $3,300.00 <span class="text-gray-400 line-through text-sm">$4,500,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Smart Charging Dock :controller charges when placed down /
+                 controller wakes and reconnects when lifted up</li>
+            <li>160G controller</li>
+            <li>pink white</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal119" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Controller Gamepad for Switch, PC, for iOS, for Android, Game Controller, Wireless Pro Controller, Gamepad,
+             Motion Control, Remote Joystick with Motor Vibration, Supports</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $823 <span class="text-gray-400 line-through text-sm">$923</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>PUSOKEI</li>
+            <li>PC, Nintendo Switch, IOS, Android</li>
+            <li>Gamepad</li>
+            <li>Bluetooth</li>
+            <li>Default</li>
+            <li>Compatible: This wireless pro controller is fully compatible for
+                 Switch, PC, for iOS, for Android, including all keys of the original for Switch.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal110" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gamesir T4n Pro Super Nova Multi-Platform Wireless Game Controller </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,595.00 <span class="text-gray-400 line-through text-sm">$2,895.00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>(Blue/Black, Pink/White)</li>
+            <li>The new  GameSir Super Nova  is a controller designed to be used with  multiple platforms</li>  
+            <li> such as the Nintendo Switch and PC. This model stands out for its different connection options</li>
+            <li>features such as the Hall linear triggers, Hall buttons and its XBOX vibration motor</li>
+            <li>Magnegtic removable masks</li>     
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Keyboard Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal91" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (1).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">YUNZII B98 Wireless Mechanical Keyboard,Hot Swappable,Full Numpad,Pre-lubed Creamy Linear Switches</h3>
+        <div class="text-red-500 font-bold">$1,299,99 <span class="text-gray-400 line-through">$229</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal92" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (2).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Wireless Mechanical Keyboard, MK870 TKL Gaming Keyboard 80% Hot Swappable Custom, RGB Backlit Side Printed PBT Keycaps</h3>
+        <div class="text-red-500 font-bold">$10,000 <span class="text-gray-400 line-through">$11,500</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal93" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (3).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">XVX 60% Gaming Keyboard, Rechargeable RGB Wireless Mechanical Keyboard</h3>
+        <div class="text-red-500 font-bold">$8,000 <span class="text-gray-400 line-through">$9,850</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal94" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (4).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Keyboard F2088 Pro 108 Keys Mechanical Red Switches RGB Rainbow Backlit Gamer</h3>
+        <div class="text-red-500 font-bold">$2,500 <span class="text-gray-400 line-through">$3,000</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal95" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (5).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AULA 99 Keys Mechanical Keyboard, Tri-Mode BT5.0/2.4GHz/USB-C Hot Swappable Custom Gaming</h3>
+        <div class="text-red-500 font-bold">$2,841 <span class="text-gray-400 line-through">$5,683</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal96" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 6.webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Wireless gaming Keyboard and Mouse,Rainbow Backlit Rechargeable Keyboard Mouse</h3>
+        <div class="text-red-500 font-bold">$2,920 <span class="text-gray-400 line-through">$3,892</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal97" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 7.webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">SteelSeries Apex Pro Mini HyperMagnetic Gaming Keyboard Adjustable Actuation Compact 60%</h3>
+        <div class="text-red-500 font-bold">$13,195 <span class="text-gray-400 line-through">$15,000</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal98" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 8.webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon S101-3 Wired RGB Backlit Gaming Keyboard and Mouse Combo, Programmable Keyboard Gaming and Mouse</h3>
+        <div class="text-red-500 font-bold">$2,554<span class="text-gray-400 line-through">$3,500</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal99" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 9.webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">RK ROYAL KLUDGE RKS70 Ergonomic Split Keyboard, Wireless Gaming Keyboard</h3>
+        <div class="text-red-500 font-bold"> $7,847 <span class="text-gray-400 line-through">$9,500</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal100" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 10.webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">YUNZII C68 Wireless Mechanical Keyboard,65% Layout,Hot Swap,Triple Mode BT5.0/2.4G/Wired, RGB Backlit NKRO,Cute Cat</h3>
+        <div class="text-red-500 font-bold">$4,649.86<span class="text-gray-400 line-through">$5,649.00</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal91" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">YUNZII B98 Wireless Mechanical Keyboard,Hot Swappable,Full Numpad,Pre-lubed Creamy Linear Switches,Gasket Mounted,Custom RGB Backlit for Win/Mac</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,299,99 <span class="text-gray-400 line-through text-sm">$2,299,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>(Grey, Cocoa Cream V2)</li>
+            <li>IOS、Windows、Mac、Android</li>
+            <li>Bluetooth, 2.4GHz, Type-C</li>
+            <li>Multimedia, Video Editing, Everyday Use, Personal, Education, Gaming, Business</li>
+            <li>mechanical gaming keyboard hot swappable creamy keyboard full size custom keyboard ipad wireless 98 keyboard mac keyboard with number pad gamer RGB keyboard tkl backlit Bluetooth keyboard hot swappable keyboard PBT double-shotmechanical gaming keyboard hot swappable creamy keyboard full size custom keyboard ipad wireless 98 keyboard mac keyboard with number pad gamer RGB keyb.</li>
+            <li>Color	Grey
+              Number of Keys	98
+              Style	gaming
+              Material	Plastic</li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal92" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Wireless Mechanical Keyboard, MK870 TKL Gaming Keyboard 80% Hot Swappable Custom, RGB Backlit Side Printed PBT Keycaps,</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $10,000 <span class="text-gray-400 line-through text-sm">$11,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>2.4GHz/USB-C/BT for Win/Mac</li>
+            <li>Laptop, PC</li>
+            <li>FL ESPORTS</li>
+            <li>87</li>
+            <li>Optimized 80% Layout: The MK870 features an 80% layout, balancing functionality and compactness, perfect for gamers and professionals needing essential keys and a tidy workspace.</li>
+           <li>RGB Backlighting & Custom FN Layer: Enjoy vibrant RGB lighting with dynamic effects and music sync. Adjust brightness and speed, and fully customize the FN layer for key remapping and macros.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal93" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">XVX 60% Gaming Keyboard, Rechargeable RGB Wireless Mechanical Keyboard, Mini 60</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $8,000 <span class="text-gray-400 line-through text-sm">$9,850</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>A brand-new, unused, unopened, undamaged item in its original packaging (where packaging is applicable). Packaging should be the same as what is found in a retail store, unless the item is handmade or was packaged by the manufacturer in non-retail packaging, such as an unprinted box or plastic bag</li>
+           <li>xihao-jp-shanhuhai-brown</li>
+           <li>Windows, Mac OS</li>
+           <li>Ergonomic, Backlit, Rechargeable</li>
+           <li>1.76 pounds</li>
+           <li>1 Lithium Polymer batteries required. (included)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal94" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Keyboard F2088 Pro 108 Keys Mechanical Red Switches RGB Rainbow Backlit Gamer</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,500 <span class="text-gray-400 line-through text-sm">$3,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>QWERTY (Standard)</li>
+            <li>F2088</li>
+            <li>Mechanical</li>
+            <li>Illuminated</li>
+            <li>Easy Removal & Free Style Switching : The keyboard is designed with a removable magnetic top cover that makes it easy to remove and install the top cover in less than 1 second. You can choose between recessed or floating styles(Metal Keyboard).</li>
+  
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal95" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AULA 99 Keys Mechanical Keyboard, Tri-Mode BT5.0/2.4GHz/USB-C Hot Swappable Custom Gaming Keyboard, Pre-lubed Linear Switches Gasket Structure Creamy Keyboard with Number Pad RGB for PC Xbox PS5 MAC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,841 <span class="text-gray-400 line-through text-sm">$5,683</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>AULA</li>
+            <li>Laptop, PC, Smart TV, Gaming Console, Tablet</li>
+            <li>USB-A</li> 
+            <li>Backlit, PBT Keycaps, Programmable Keys, Rechargeable, Hot-Swappable</li>         
+            <li>Multimedia, Working, Video Editing, Everyday Use, Personal, Education, Programming, Photo Editing, Student, Gaming, BusinessMultimedia, Working, Video Editing, Everyday Use, Personal, Education, Programming, Photo</li>    
+            <li>Multi-Device Connection: AULA 99 keys keyboard wireless supports Bluetooth, 2.4GHz wireless and USB wired connectivity, which can be easily switched among 5 devices via shortcut keys or side keys</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal96" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 6.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Wireless gaming Keyboard and Mouse,Rainbow Backlit Rechargeable Keyboard Mouse Removable Hand Rest Mechanical Feel Keyboard and 7 Color Gaming Mute Mouse for PC Gamers</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,920 <span class="text-gray-400 line-through text-sm">$3,892</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>The gaming keyboard is made of aluminum alloy brushed panel, which is sturdy and durable. It can be waterproof, and the keyboard builts-in 3000mAh battery. The mouse builts-in 800mAh battery ,eliminates the trouble of frequently 
+              changing batteries. No operation automatically sleeps within 5 minutes, any key wakes up</li>
+              <li>2.4G wireless technology enables the wireless gaming keyboard and mouse to achieve long-range wireless control. Plug & Play, the keyboard and mouse share an Intelligent Nano Receiver, convenient and fast. The gaming keyboard features 
+                a streamlined layout that is ergonomically designed for gaming or office or home use</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal97" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 7.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">SteelSeries Apex Pro Mini HyperMagnetic Gaming Keyboard  Adjustable Actuation  Compact 60% Form Factor  RGB  PBT Keycaps</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $13,195 <span class="text-gray-400 line-through text-sm">$15,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Windows, Xbox, PlayStation, and Mac OS X*. USB port required *Not all software features supported on Mac OSWindows, Xbox, PlayStation, and Mac OS X*. USB port required *Not all software features supported on Mac OS</li>
+            <li>FULLY CUSTOMIZABLE and STUPIDLY FAST with OmniPoint 2.0 Adjustable HyperMagnetic switches</li>
+            <li>RAPID TRIGGER — Eradicate latency arising from the physical movement of the switch through dynamic activation and deactivation of keys based on travel distance rather than a fixed point in the key travel</li>
+            <li>ULTIMATE CONTROL — 40 levels of per-key actuation (0.1 – 4.0mm) — set WASD for light, ultra-fast movements and set ability keys to deep presses to avoid accidentally triggering specials</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal98" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 8.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon S101-3 Wired RGB Backlit Gaming Keyboard and Mouse Combo, Programmable Keyboard Gaming and Mouse (800-7200DPI), Gaming Headset Mouse Pad Combo All in 1 PC Gamer Bundle for Windows PC (Black)</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $2,554 <span class="text-gray-400 line-through text-sm">$3,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Redragon</li>
+            <li>Black</li>
+            <li>Laptop, Personal Computer, Tablet</li>
+            <li>6 different RGB Lighting modes & effects, 4 backlight brightness levels, adjustable breathing speed</li>
+            <li>Includes Redragon RGB Backlit Computer Gaming Keyboard and RGB Backlit Gaming Mouse and gaming headset, mouse pad. ALL-IN-ONE PC GAMER VALUE KIT</li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal99" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 9.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">RK ROYAL KLUDGE RKS70 Ergonomic Split Keyboard, Wireless Gaming Keyboard with Bluetooth/2.4G/Wired, 75% RGB Hot Swappable Mechanical Keyboards Fixed Wrist Rest for Win/Mac, Brown Switches Black</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $7,847 <span class="text-gray-400 line-through text-sm">$9,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+           <li>Laptop, PC, Smartphone</li>
+           <li>Bluetooth, USB-C, 2.4Ghz wireless</li>
+           <li>RK S70 split mechanical keyboards support with 2.4Ghz Dongle/ Bluetooth 5.0/ USB wired three connection modes.</li>
+           <li>Thanks to the split keyboard design and 8 adjustable keyboard feets, you can freely adjust the tpying angle of the pc games keyboard according to your comfortable input posture</li>
+           <li>RKS70 gaming keyboard adopts with tactile brown switches that provide a slight bump feel on each keystroke, making them excellent for programming and typing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal100" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 10.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">YUNZII C68 Wireless Mechanical Keyboard,65% Layout,Hot Swap,Triple Mode BT5.0/2.4G/Wired, RGB Backlit NKRO,Cute Cat Silicone Ergonomic Design for Win/Mac (Pink, Milk Switch)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,649,86 <span class="text-gray-400 line-through text-sm">$5,649,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+               <li>IOS、Windows、Mac、Android</li> 
+               <li>Bluetooth, 2.4GHz, Type-C</li> 
+               <li>Backlit, Ergonomic,3 Modes,Customizable Display Keys, Hot-Swappable</li> 
+               <li>68</li>
+               <li>65% Layout, Adorable Cat-Inspired Design: YUNZII C68 wireless mechanical keyboard is a unique cute keyboard with YUNZII innovative kawaii cat design crafted from premium silicone material.The cat head of the keyboard is detachable.You can replace other head in future.The 65% layout 68 keys mechanical keyboard is compact and functional.This cute keyboard is suitable for home,office,workspace,outdoor,and casual games</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Monitors Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal61" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/LG-Monitor-UltraGear-27GN950-3.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">LG UltraGear 27GN950-B</h3>
+        <div class="text-red-500 font-bold">$799.99 <span class="text-gray-400 line-through">$999.99</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal62" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/samsung features.avif" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Samsung Odyssey G7 (LC32G75TQSNXZA)</h3>
+        <div class="text-red-500 font-bold">$609.59 <span class="text-gray-400 line-through">$781.65</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal63" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/alienwareAW3423WF_1.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Alienware AW3423DWF (QD-OLED)</h3>
+        <div class="text-red-500 font-bold">$799 <span class="text-gray-400 line-through">$899</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal64" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/ViewSonic Elite XG270.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">ViewSonic Elite XG270</h3>
+        <div class="text-red-500 font-bold">$330 <span class="text-gray-400 line-through">$430</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal65" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Asus-ROG-Swift.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">ASUS ROG Swift PG259QN</h3>
+        <div class="text-red-500 font-bold">$699 <span class="text-gray-400 line-through">$799</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal66" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/GIGA.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm"> Gigabyte M28U</h3>
+        <div class="text-red-500 font-bold">$399 <span class="text-gray-400 line-through">$499</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal67" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/acer-predator-xb273u-gx-01.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Acer Predator XB273U GX</h3>
+        <div class="text-red-500 font-bold">$519.99 <span class="text-gray-400 line-through">$619.99</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal68" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/j.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">MSI MPG Artymis 343CQR</h3>
+        <div class="text-red-500 font-bold">$399<span class="text-gray-400 line-through">$499</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal69" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/AOC Agon PROAG27QZM.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AOC Agon PRO AG274QZM</h3>
+        <div class="text-red-500 font-bold"> $469 <span class="text-gray-400 line-through">$569</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal70" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/BenQ MOBIUZEX2710U.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">BenQ MOBIUZ EX2710U</h3>
+        <div class="text-red-500 font-bold">$359<span class="text-gray-400 line-through">$459</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal61" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/LG-Monitor-UltraGear-27GN950-3.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">LG UltraGear 27GN950-B</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $799.99 <span class="text-gray-400 line-through text-sm">$999.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 3840 x 2160 (4K UHD)</li>
+            <li>Panel: Nano IPS</li>
+            <li>Refresh Rate: 144Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: G-SYNC Compatible, FreeSync Premium Pro</li>
+            <li>Extras: VESA DisplayHDR 600, great color + speed combo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal62" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/samsung features.avif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Samsung Odyssey G7 (LC32G75TQSNXZA)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $609.59 <span class="text-gray-400 line-through text-sm">$781.65</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 32"</li>
+            <li>Resolution: 2560 x 1440 (QHD)</li>
+            <li>Panel: VA</li>
+            <li>Refresh Rate: 240Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: G-SYNC + FreeSync Premium Pro</li>
+            <li>Curve: 1000R — super immersive</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal63" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/alienwareAW3423WF_1.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Alienware AW3423DWF (QD-OLED)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $799 <span class="text-gray-400 line-through text-sm">$899</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 34" Ultrawide</li>
+            <li>Resolution: 3440 x 1440 (UWQHD)</li>
+            <li>Panel: QD-OLED</li>
+            <li>Refresh Rate: 165Hz</li>
+            <li>Response Time: 0.1ms</li>
+            <li>Sync: FreeSync Premium Pro, G-SYNC Compatible</li>
+            <li>Visuals: Deep blacks, rich contrast</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal64" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/ViewSonic Elite XG270.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">ViewSonic Elite XG270</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $330 <span class="text-gray-400 line-through text-sm">$430</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 1920 x 1080 (Full HD)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 240Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: G-SYNC Compatible</li>
+            <li>Style: RGB accents, gamer aesthetic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal65" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Asus-ROG-Swift.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">ASUS ROG Swift PG259QN</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $699 <span class="text-gray-400 line-through text-sm">$799</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 24.5"</li>
+            <li>Resolution: 1920 x 1080 (Full HD)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 360Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: NVIDIA G-SYNC</li>
+            <li>Best For: Esports, ultra-fast reaction</li>   
+          </ul>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal66" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/GIGA.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gigabyte M28U</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $399<span class="text-gray-400 line-through text-sm">$499</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 28"</li>
+            <li>Resolution: 3840 x 2160 (4K)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 144Hz</li>
+            <li>Response Time: 1ms MPRT</li>
+            <li>Sync: FreeSync Premium Pro, G-SYNC Compatible</li>
+            <li>HDMI 2.1: Yes — great for PS5/XSX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal67" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/acer-predator-xb273u-gx-01.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Acer Predator XB273U GX </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $519.99<span class="text-gray-400 line-through text-sm">$619.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 2560 x 1440 (QHD)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 270Hz (OC)</li>
+            <li>Response Time: 0.5ms</li>
+            <li>Sync: G-SYNC Compatible</li>
+            <li>Colors + Speed: Great all-arounder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal68" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/j.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">MSI MPG Artymis 343CQR</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $399 <span class="text-gray-400 line-through text-sm">$499</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 34" Ultrawide</li>
+            <li>Resolution: 3440 x 1440 (UWQHD)</li>
+            <li>Panel: VA</li>
+            <li>Refresh Rate: 165Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: FreeSync Premium</li>
+            <li>Immersive: 1000R curve, great for racing/FPS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal69" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/AOC Agon PROAG27QZM.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AOC Agon PRO AG274QZM</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $469 <span class="text-gray-400 line-through text-sm">$569</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 2560 x 1440 (QHD)</li>
+            <li>Panel: Mini-LED IPS</li>
+            <li>Refresh Rate: 240Hz</li>
+            <li>HDR: DisplayHDR 1000</li>
+            <li>Sync: G-SYNC + FreeSync</li>
+            <li>Vibrant + Fast: For high-end gaming</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal70" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/BenQ MOBIUZEX2710U.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">BenQ MOBIUZ EX2710U</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $359 <span class="text-gray-400 line-through text-sm">$459</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 3600 for precise tracking.</li>
+            <li>Resolution: 3840 x 2160 (4K)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 144Hz</li>
+            <li>Response Time: 1ms MPRT</li>
+            <li>Sync: FreeSync Premium</li>
+            <li>Speakers: Built-in TreVolo audio</li>  
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Wholeset PC Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal1" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/CHIST I7.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">CHIST I7 Gaimng Pc Full Setup (core i7 4570/16GB Ram/ 256GB NVME SSD /1TB HDD/ 24-INCH Full HD Monitor/Keyboard Mouse/Windows 10/WiFi-Bluetooth) (GT 1050TI 4GB Graphic Card)</h3>
+        <div class="text-red-500 font-bold">$499,000<span class="text-gray-400 line-through">$599,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal2" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Vibox SG-X.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Vibox SG-X-104 Gaming PC Bundle • Intel Core i9 14900KF 6.0GHz • Nvidia RTX 4090 24GB • 32GB RAM • 2TB NVMe SSD • 1000W PSU • Windows 11 • 27" 165Hz Monitor • WiFi • Prebuilt</h3>
+        <div class="text-red-500 font-bold">$449.999<span class="text-gray-400 line-through">$549.999</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal3" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Gaming.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gaming Computer Desk and Massage Gaming Chair Set with Monitor Shelf Power Strip Red and Gaming PC Bundlep</h3>
+        <div class="text-red-500 font-bold"> $298,940 <span class="text-gray-400 line-through">$398,940</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal4" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Coleshome.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Coleshome Gaming Desk with LED Lights & Power Outlet, Reversible Computer Desk with Drawers, Gaming Table with Storage & Monitor Stand, Gaming PC Bundle</h3>
+        <div class="text-red-500 font-bold"> $131,255.63 <span class="text-gray-400 line-through">$2,315.63</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal5" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/domicon.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gaming Desk, with Gaming PC Bundle, 47 inch L Shaped Gaming Desk, Computer Desk with LED Lights & Adjustable Stand, Power Outlets, Storage Drawer, Reversible with Shelves, Hook, Black Carbon Fiber</h3>
+        <div class="text-red-500 font-bold">$79.500.98<span class="text-gray-400 line-through">$79.999.98</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal6" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/MORDIGGIAN.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">MORDIGGIAN AMD Ryzen 5 5600X | 16GB | 500GB | RTX 3060 | 24″ 165Hz Monitor | Gaming Keyboard and Mouse High End Production and Gaming Complete Set</h3>
+        <div class="text-red-500 font-bold">$38,545.00<span class="text-gray-400 line-through">$38,999.00</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal7" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Vibox206.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Vibox SG-IV-206 White Gaming PC Bundle</h3>
+        <div class="text-red-500 font-bold">$990.999<span class="text-gray-400 line-through">$999.999</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal8" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/sonic.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">DCG Cobalt - i5 12600KF, 16GB DDR4, RX 7600 XT 16GB, 500GB SSD, 27" 165Hz Monitor Gaming PC Bundle</h3>
+        <div class="text-red-500 font-bold">$19,459.99<span class="text-gray-400 line-through">$25,949.99</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal9" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Gaming PC.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gaming PC Bundle (2022) AMD Ryzen 5600G ,16GB RAM ,1TB SSD , Nvidia RTX 3060 12GB , 165Hz monitor , Gaming RGB keyboard and mouse</h3>
+        <div class="text-red-500 font-bold">$67,599<span class="text-gray-400 line-through">$70,599</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal10" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/gaming 10.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HP RGB Gaming Desktop PC Bundle - Intel Core i7 6th Gen, 16GB DDR4 Ram, 512GB SSD, Radeon RX - 550 4GB GDDR5, New 24 Inch Monitor - Prebuilt Gaming Computer, RGB Set - Windows 10 Pro (Renewed)</h3>
+        <div class="text-red-500 font-bold"> $456,999<span class="text-gray-400 line-through">$544,999</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/CHIST I7.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">CHIST I7 Gaimng Pc Full Setup (core i7 4570/16GB Ram/ 256GB NVME SSD /1TB HDD/ 24-INCH Full HD Monitor/Keyboard Mouse/Windows 10/WiFi-Bluetooth) (GT 1050TI 4GB Graphic Card)C</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $499,000 <span class="text-gray-400 line-through text-sm">$599,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Brand:	CHIST</li>
+           <li>Operating System: Windows</li>
+           <li>CPU Model: Core i7 Family</li>
+           <li>CPU Speed: 3.2 GHz</li>
+           <li>Cache Size: 6 GB</li>
+           <li>Graphics Card Description: Dedicated</li>
+           <li>Graphics Coprocessor: Integrated Graphics</li>
+           <li>Memory Slots Available: yes</li>
+           <li>Memory Storage Capacity: 1000 GB</li>
+           <li>Specific Uses For Product: Video Editing, Everyday Use, Gaming</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Vibox SG-X.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Vibox SG-X-104 Gaming PC Bundle • Intel Core i9 14900KF 6.0GHz • Nvidia RTX 4090 24GB • 32GB RAM • 2TB NVMe SSD • 1000W PSU • Windows 11 • 27" 165Hz Monitor • WiFi • Prebuilt</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $449.999 <span class="text-gray-400 line-through text-sm">$549.999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Brand: Vibox</li>
+            <li>Operating system: Windows</li>
+            <li>CPU model: Core i9</li>
+            <li>CPU speed: 3 GHz</li>
+            <li>Graphics card description: RTX 4090</li>
+            <li>Graphics co-processor: RTX 4090</li>
+            <li>Memory storage capacity: 32 GB</li>
+            <li>Specific uses for product: Gaming PC, Gaming</li>
+            <li>Personal computer design type: Computer Tower</li>
+            <li>Screen size: 27 Inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Gaming.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gaming Computer Desk and Massage Gaming Chair Set with Monitor Shelf Power Strip Red and Gaming PC Bundle</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $298,940 <span class="text-gray-400 line-through text-sm">$398,940</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Color/Finish: Red</li> 
+            <li>Commercial Use: Residential</li>
+            <li>Frame Material: Wood</li>
+            <li>Furniture Features: Adjustable Height,Desk and Chair Set</li>
+            <li>Included: Chair,Desk</li>
+            <li> Material: Medium Density Fiberboard (MDF)</li>
+            <li>Number of Pieces: 2</li>
+            <li>Product Weight (lb.): 85.5 lb (38.78 kg)</li>
+            <li>Shape: Rectangular</li>
+            <li>Storage Capacity (cu. ft.): 0.83 cu ft</li>
+            <li>Tabletop Material: Wood</li>
+            <li>Product Depth (in.): 29 in (73.7 cm)</li>
+            <li>Product Height (in.): 50 in (127 cm)</li>
+            <li>Product Width (in.): 29 in (73.7 cm)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Coleshome.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Coleshome Gaming Desk with LED Lights & Power Outlet, Reversible Computer Desk with Drawers, Gaming Table with Storage & Monitor Stand, Gaming PC Bundle </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $131,255.63 <span class="text-gray-400 line-through text-sm">$231,255.63</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Brand: Coleshome</li>
+            <li>Product dimensions: 50D x 151W x 113.2H centimetres</li>
+            <li>Colour: Carbon Fiber Black</li>
+            <li>Style: Modern</li>
+            <li>Base material: Carbon Fibre</li>
+            <li>Finish type: Laminated</li>
+            <li>Special feature: LED Lights, USB Charging Ports, Power Outlets, Ergonomic Monitor Stand</li>
+            <li>Recommended uses for product: Gaming</li>
+            <li>Mounting type: Floor Mount</li>
+            <li>Item weight: 18.7 Kilograms</li>
+            <li>Date First Available: 2025-02-23 16:26:42</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/domicon.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gaming Desk, with Gaming PC Bundle, 47 inch L Shaped Gaming Desk, Computer Desk with LED Lights & Adjustable Stand, Power Outlets, Storage Drawer, Reversible with Shelves, Hook, Black Carbon Fiber</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $79.500.98 <span class="text-gray-400 line-through text-sm">$79.999.98</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Brand: DOMICON</li>
+            <li>Product Dimensions: 47"D x 47"W x 47"H</li>
+            <li>Color: Carbon Fiber Pro</li>
+            <li>Style: Gaming Desk</li>
+            <li>Base Material: Alloy Steel</li>
+            <li>Finish Type: Painted</li>
+            <li>Special Feature: Wheel</li>
+            <li>Room Type: Office, Bedroom, Living Room</li>
+            <li>Recommended Uses For Product: Working, Gaming</li>
+            <li>Mounting Type: Floor Mount</li>
+          </ul>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/MORDIGGIAN.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">MORDIGGIAN AMD Ryzen 5 5600X | 16GB | 500GB | RTX 3060 | 24″ 165Hz Monitor | Gaming Keyboard and Mouse High End Production and Gaming Complete Set</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $38,545.00 <span class="text-gray-400 line-through text-sm">$38,999.00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>AMD Ryzen 5 5600X processor: Blazing fast processing speeds and multi-core performance for seamless multitasking.</li>
+            <li>16GB RAM: Robust memory capacity for efficient handling of applications and gaming environments.</li>
+            <li>500GB SSD: High-speed storage solution that ensures rapid load times and quick access to files.</li>
+            <il>NVIDIA RTX 3060 GPU: Next-gen graphics card delivering exceptional performance for high-resolution gaming and creative work.</li>
+            <li>24″ 165Hz monitor: Crisp visuals and ultra-smooth gameplay with a high refresh rate, perfect for competitive gamers.</li>
+            <li>Included gaming keyboard and mouse: Ergonomically designed peripherals that enhance gaming experience and comfort.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal7" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Vibox206.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Vibox SG-IV-206 White Gaming PC Bundle • AMD Ryzen 7 5700X 4.6GHz • Nvidia RTX 3060 12GB • 16GB RAM • 1TB NVMe SSD • 700W PSU • Windows 11 • 27" 165Hz Monitor • WiFi • Prebuilt</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $990.999 <span class="text-gray-400 line-through text-sm">$999.999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Brand: Vibox</li>
+            <li>Operating system: Windows</li>
+            <li>CPU model: R Series</li>
+            <li>CPU speed: 3.4 GHz</li>
+            <li>Graphics card description: RTX 3060</li>
+            <li>Graphics co-processor: RTX 3060</li>
+            <li>Memory storage capacity: 16 GB</li>
+            <li>Specific uses for product: Gaming PC, Gaming</li>
+            <li>Personal computer design type: Computer Tower</li>
+            <li>Screen size: 27 Inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal8" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/sonic.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">DCG Cobalt - i5 12600KF, 16GB DDR4, RX 7600 XT 16GB, 500GB SSD, 27" 165Hz Monitor Gaming PC Bundle</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $19,459.99 <span class="text-gray-400 line-through text-sm">$25,949.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Graphics Card: AMD Radeon RX 7600 XT 16GB</li>
+            <li>Processor: Intel Core i5 12600KF 3.7GHz Ten Core LGA1700 CPU</li>
+            <li>>Memory: Kingston FURY Beast 16GB (2 x 8GB) 3200MHz</li>
+            <li>Storage: 500GB Kingston NV2 M.2 NVME SSD</li>
+            <li>Motherboard: H610M Motherboard</li>
+            <li>Cooling Solution: Stock Manufacturer Heatsink and Fan</li>
+            <li>Operating System: Windows 10 Pro (Free upgrade to Windows 11)</li>             
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal9" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Gaming PC.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gaming PC Bundle (2022) AMD Ryzen 5600G ,16GB RAM ,1TB SSD , Nvidia RTX 3060 12GB , 165Hz monitor , Gaming RGB keyboard and mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $67,599 <span class="text-gray-400 line-through text-sm">$70,599</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>SKU: GamingBundle-R5-rtx3060 </li>
+            <li>Operating System: Windows 11 Pro</li> 
+            <li>Case: Veno Scorp - NeonZilla Mid Tower ATX Case</li>
+            <li>CPU Cooling: AMD Wraith Spire Cooler</li>
+            <li>CPU (Processor): AMD Ryzen 5 5600G 6Cores 12Theads 4.2 Ghz Boost</li>
+            <li>Motherboard: Gigabyte B550M DS3H mATX Motherboard</li>  
+            <li>RAM: KLEVV CRAS X RGB 16GB 3600MHz Gaming Memory DDR4</li>  
+            <li>Graphics Card : Nvidia Geforce RTX 3060 12GB OC Edition</li> 
+            <li>Power Supply : EVGA 600W Power Supply</li>
+            <li>Storage : Crucial P2 SSD 1TB M.2 NVMe Gen3</li>
+            <li>7xARGB Fans</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal10" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/gaming 10.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HP RGB Gaming Desktop PC Bundle - Intel Core i7 6th Gen, 16GB DDR4 Ram, 512GB SSD, Radeon RX - 550 4GB GDDR5, New 24 Inch Monitor - Prebuilt Gaming Computer, RGB Set - Windows 10 Pro (Renewed)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $456,999 <span class="text-gray-400 line-through text-sm">$544,999</span>
+          </p>
+          <ul class="text-sm mt-1 list-disc pl-5 space-y-1">
+            <li>This Gaming PC features an Intel Core i7-6700 6th Gen 3.4 Ghz processor for lightning-fast processing</li> 
+              <li>16GB DDR4 RAM for seamless multitasking</li>
+              <li>a spacious 512GB Solid State Drive (SSD) for speedy data access</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

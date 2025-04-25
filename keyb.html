@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Keyboard</title>
+  <link rel="icon" href="img/KEYB (1).jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+</head>
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10" >
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Keyboard Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal91" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (1).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">YUNZII B98 Wireless Mechanical Keyboard,Hot Swappable,Full Numpad,Pre-lubed Creamy Linear Switches</h3>
+        <div class="text-red-500 font-bold">$1,299,99 <span class="text-gray-400 line-through">$229</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal92" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (2).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Wireless Mechanical Keyboard, MK870 TKL Gaming Keyboard 80% Hot Swappable Custom, RGB Backlit Side Printed PBT Keycaps</h3>
+        <div class="text-red-500 font-bold">$10,000 <span class="text-gray-400 line-through">$11,500</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal93" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (3).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">XVX 60% Gaming Keyboard, Rechargeable RGB Wireless Mechanical Keyboard</h3>
+        <div class="text-red-500 font-bold">$8,000 <span class="text-gray-400 line-through">$9,850</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal94" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (4).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Keyboard F2088 Pro 108 Keys Mechanical Red Switches RGB Rainbow Backlit Gamer</h3>
+        <div class="text-red-500 font-bold">$2,500 <span class="text-gray-400 line-through">$3,000</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal95" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB (5).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AULA 99 Keys Mechanical Keyboard, Tri-Mode BT5.0/2.4GHz/USB-C Hot Swappable Custom Gaming</h3>
+        <div class="text-red-500 font-bold">$2,841 <span class="text-gray-400 line-through">$5,683</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal96" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 6.webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Wireless gaming Keyboard and Mouse,Rainbow Backlit Rechargeable Keyboard Mouse</h3>
+        <div class="text-red-500 font-bold">$2,920 <span class="text-gray-400 line-through">$3,892</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal97" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 7.webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">SteelSeries Apex Pro Mini HyperMagnetic Gaming Keyboard Adjustable Actuation Compact 60%</h3>
+        <div class="text-red-500 font-bold">$13,195 <span class="text-gray-400 line-through">$15,000</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal98" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 8.webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon S101-3 Wired RGB Backlit Gaming Keyboard and Mouse Combo, Programmable Keyboard Gaming and Mouse</h3>
+        <div class="text-red-500 font-bold">$2,554<span class="text-gray-400 line-through">$3,500</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal99" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 9.webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">RK ROYAL KLUDGE RKS70 Ergonomic Split Keyboard, Wireless Gaming Keyboard</h3>
+        <div class="text-red-500 font-bold"> $7,847 <span class="text-gray-400 line-through">$9,500</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal100" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/KEYB 10.webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">YUNZII C68 Wireless Mechanical Keyboard,65% Layout,Hot Swap,Triple Mode BT5.0/2.4G/Wired, RGB Backlit NKRO,Cute Cat</h3>
+        <div class="text-red-500 font-bold">$4,649.86<span class="text-gray-400 line-through">$5,649.00</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal91" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">YUNZII B98 Wireless Mechanical Keyboard,Hot Swappable,Full Numpad,Pre-lubed Creamy Linear Switches,Gasket Mounted,Custom RGB Backlit for Win/Mac</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,299,99 <span class="text-gray-400 line-through text-sm">$2,299,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>(Grey, Cocoa Cream V2)</li>
+            <li>IOS、Windows、Mac、Android</li>
+            <li>Bluetooth, 2.4GHz, Type-C</li>
+            <li>Multimedia, Video Editing, Everyday Use, Personal, Education, Gaming, Business</li>
+            <li>mechanical gaming keyboard hot swappable creamy keyboard full size custom keyboard ipad wireless 98 keyboard mac keyboard with number pad gamer RGB keyboard tkl backlit Bluetooth keyboard hot swappable keyboard PBT double-shotmechanical gaming keyboard hot swappable creamy keyboard full size custom keyboard ipad wireless 98 keyboard mac keyboard with number pad gamer RGB keyb.</li>
+            <li>Color	Grey
+              Number of Keys	98
+              Style	gaming
+              Material	Plastic</li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal92" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Wireless Mechanical Keyboard, MK870 TKL Gaming Keyboard 80% Hot Swappable Custom, RGB Backlit Side Printed PBT Keycaps,</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $10,000 <span class="text-gray-400 line-through text-sm">$11,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>2.4GHz/USB-C/BT for Win/Mac</li>
+            <li>Laptop, PC</li>
+            <li>FL ESPORTS</li>
+            <li>87</li>
+            <li>Optimized 80% Layout: The MK870 features an 80% layout, balancing functionality and compactness, perfect for gamers and professionals needing essential keys and a tidy workspace.</li>
+           <li>RGB Backlighting & Custom FN Layer: Enjoy vibrant RGB lighting with dynamic effects and music sync. Adjust brightness and speed, and fully customize the FN layer for key remapping and macros.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal93" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">XVX 60% Gaming Keyboard, Rechargeable RGB Wireless Mechanical Keyboard, Mini 60</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $8,000 <span class="text-gray-400 line-through text-sm">$9,850</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>A brand-new, unused, unopened, undamaged item in its original packaging (where packaging is applicable). Packaging should be the same as what is found in a retail store, unless the item is handmade or was packaged by the manufacturer in non-retail packaging, such as an unprinted box or plastic bag</li>
+           <li>xihao-jp-shanhuhai-brown</li>
+           <li>Windows, Mac OS</li>
+           <li>Ergonomic, Backlit, Rechargeable</li>
+           <li>1.76 pounds</li>
+           <li>1 Lithium Polymer batteries required. (included)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal94" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Keyboard F2088 Pro 108 Keys Mechanical Red Switches RGB Rainbow Backlit Gamer</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,500 <span class="text-gray-400 line-through text-sm">$3,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>QWERTY (Standard)</li>
+            <li>F2088</li>
+            <li>Mechanical</li>
+            <li>Illuminated</li>
+            <li>Easy Removal & Free Style Switching : The keyboard is designed with a removable magnetic top cover that makes it easy to remove and install the top cover in less than 1 second. You can choose between recessed or floating styles(Metal Keyboard).</li>
+  
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal95" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AULA 99 Keys Mechanical Keyboard, Tri-Mode BT5.0/2.4GHz/USB-C Hot Swappable Custom Gaming Keyboard, Pre-lubed Linear Switches Gasket Structure Creamy Keyboard with Number Pad RGB for PC Xbox PS5 MAC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,841 <span class="text-gray-400 line-through text-sm">$5,683</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>AULA</li>
+            <li>Laptop, PC, Smart TV, Gaming Console, Tablet</li>
+            <li>USB-A</li> 
+            <li>Backlit, PBT Keycaps, Programmable Keys, Rechargeable, Hot-Swappable</li>         
+            <li>Multimedia, Working, Video Editing, Everyday Use, Personal, Education, Programming, Photo Editing, Student, Gaming, BusinessMultimedia, Working, Video Editing, Everyday Use, Personal, Education, Programming, Photo</li>    
+            <li>Multi-Device Connection: AULA 99 keys keyboard wireless supports Bluetooth, 2.4GHz wireless and USB wired connectivity, which can be easily switched among 5 devices via shortcut keys or side keys</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal96" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 6.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Wireless gaming Keyboard and Mouse,Rainbow Backlit Rechargeable Keyboard Mouse Removable Hand Rest Mechanical Feel Keyboard and 7 Color Gaming Mute Mouse for PC Gamers</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,920 <span class="text-gray-400 line-through text-sm">$3,892</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>The gaming keyboard is made of aluminum alloy brushed panel, which is sturdy and durable. It can be waterproof, and the keyboard builts-in 3000mAh battery. The mouse builts-in 800mAh battery ,eliminates the trouble of frequently 
+              changing batteries. No operation automatically sleeps within 5 minutes, any key wakes up</li>
+              <li>2.4G wireless technology enables the wireless gaming keyboard and mouse to achieve long-range wireless control. Plug & Play, the keyboard and mouse share an Intelligent Nano Receiver, convenient and fast. The gaming keyboard features 
+                a streamlined layout that is ergonomically designed for gaming or office or home use</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal97" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 7.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">SteelSeries Apex Pro Mini HyperMagnetic Gaming Keyboard  Adjustable Actuation  Compact 60% Form Factor  RGB  PBT Keycaps</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $13,195 <span class="text-gray-400 line-through text-sm">$15,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Windows, Xbox, PlayStation, and Mac OS X*. USB port required *Not all software features supported on Mac OSWindows, Xbox, PlayStation, and Mac OS X*. USB port required *Not all software features supported on Mac OS</li>
+            <li>FULLY CUSTOMIZABLE and STUPIDLY FAST with OmniPoint 2.0 Adjustable HyperMagnetic switches</li>
+            <li>RAPID TRIGGER — Eradicate latency arising from the physical movement of the switch through dynamic activation and deactivation of keys based on travel distance rather than a fixed point in the key travel</li>
+            <li>ULTIMATE CONTROL — 40 levels of per-key actuation (0.1 – 4.0mm) — set WASD for light, ultra-fast movements and set ability keys to deep presses to avoid accidentally triggering specials</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal98" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 8.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon S101-3 Wired RGB Backlit Gaming Keyboard and Mouse Combo, Programmable Keyboard Gaming and Mouse (800-7200DPI), Gaming Headset Mouse Pad Combo All in 1 PC Gamer Bundle for Windows PC (Black)</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $2,554 <span class="text-gray-400 line-through text-sm">$3,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Redragon</li>
+            <li>Black</li>
+            <li>Laptop, Personal Computer, Tablet</li>
+            <li>6 different RGB Lighting modes & effects, 4 backlight brightness levels, adjustable breathing speed</li>
+            <li>Includes Redragon RGB Backlit Computer Gaming Keyboard and RGB Backlit Gaming Mouse and gaming headset, mouse pad. ALL-IN-ONE PC GAMER VALUE KIT</li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal99" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 9.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">RK ROYAL KLUDGE RKS70 Ergonomic Split Keyboard, Wireless Gaming Keyboard with Bluetooth/2.4G/Wired, 75% RGB Hot Swappable Mechanical Keyboards Fixed Wrist Rest for Win/Mac, Brown Switches Black</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $7,847 <span class="text-gray-400 line-through text-sm">$9,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+           <li>Laptop, PC, Smartphone</li>
+           <li>Bluetooth, USB-C, 2.4Ghz wireless</li>
+           <li>RK S70 split mechanical keyboards support with 2.4Ghz Dongle/ Bluetooth 5.0/ USB wired three connection modes.</li>
+           <li>Thanks to the split keyboard design and 8 adjustable keyboard feets, you can freely adjust the tpying angle of the pc games keyboard according to your comfortable input posture</li>
+           <li>RKS70 gaming keyboard adopts with tactile brown switches that provide a slight bump feel on each keystroke, making them excellent for programming and typing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal100" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/KEYB 10.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">YUNZII C68 Wireless Mechanical Keyboard,65% Layout,Hot Swap,Triple Mode BT5.0/2.4G/Wired, RGB Backlit NKRO,Cute Cat Silicone Ergonomic Design for Win/Mac (Pink, Milk Switch)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,649,86 <span class="text-gray-400 line-through text-sm">$5,649,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+               <li>IOS、Windows、Mac、Android</li> 
+               <li>Bluetooth, 2.4GHz, Type-C</li> 
+               <li>Backlit, Ergonomic,3 Modes,Customizable Display Keys, Hot-Swappable</li> 
+               <li>68</li>
+               <li>65% Layout, Adorable Cat-Inspired Design: YUNZII C68 wireless mechanical keyboard is a unique cute keyboard with YUNZII innovative kawaii cat design crafted from premium silicone material.The cat head of the keyboard is detachable.You can replace other head in future.The 65% layout 68 keys mechanical keyboard is compact and functional.This cute keyboard is suitable for home,office,workspace,outdoor,and casual games</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

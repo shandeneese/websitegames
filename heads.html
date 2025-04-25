@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product HeadSet</title>
+  <link rel="icon" href="img/heads.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10" >
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Gaming Headset Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <a href="#modal21" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (1).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">1396.25</h3>
+        <div class="text-red-500 font-bold">$13,499 <span class="text-gray-400 line-through">$16,999</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal22" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (2).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Frassie Gaming Chair with RGB LED Lights</h3>
+        <div class="text-red-500 font-bold">$16,999 <span class="text-gray-400 line-through">$18,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal23" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (3).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support - Deep Blue</h3>
+        <div class="text-red-500 font-bold">$15,499 <span class="text-gray-400 line-through">$17,802</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal24" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (4).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Costway Office Computer Desk Chair Gaming Pink and Black</h3>
+        <div class="text-red-500 font-bold">$18,400 <span class="text-gray-400 line-through">$20,400</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal25" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (5).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest - Blue and Black</h3>
+        <div class="text-red-500 font-bold">$20,000 <span class="text-gray-400 line-through">$22,500</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal26" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (6).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Gaming Chair, Racing Style Gaming Chair</h3>
+        <div class="text-red-500 font-bold">$38,745 <span class="text-gray-400 line-through">$40,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal27" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (7).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Pro gaming chair with Cushion Upgrade - White</h3>
+        <div class="text-red-500 font-bold">$25,000 <span class="text-gray-400 line-through">$27,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal28" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (8).webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Razer Barracuda X Wireless Gaming Headset</h3>
+        <div class="text-red-500 font-bold">$4,500,00 <span class="text-gray-400 line-through">$7,500,00</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal29" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (9).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Ozeino Gaming Headset, 3D Sound Effects, Noise Eduction Microphone Green</h3>
+        <div class="text-red-500 font-bold">$1,814,23 <span class="text-gray-400 line-through">$3,814,23</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal30" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/HEADS (10).webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">BENGOO G9000 Gaming Headset with Noise Cancelling Mic</h3>
+        <div class="text-red-500 font-bold">$12,470 <span class="text-gray-400 line-through">$15,000</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal21" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">TTRacing Swift X Pro Gaming Chair - Wolverine Edition</h2>
+          <p class="text-red-600 text-xl font-bold">
+            ₱13,499 <span class="text-gray-400 line-through text-sm">₱16,999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>yellow back</li>
+            <li>Achieve peak comfort with a relentless 135-degree recline</li>
+            <li>UNBREAKABLE COMFORT
+              WITH PREMIUM FOAM-PADDED ARMRESTS</li>
+            <li>EXPANSIVE ERGONOMIC EXCELLENCE IN A LEGENDARY SEAT</li>
+            <li>EXPERIENCE SAVAGE ADAMANTIUM COMFORT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal22" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Frassie Gaming Chair with RGB LED Lights, Video Game Chair Ergonomic
+           Computer Gamer Chair with Massage Lumbar Support</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $16,999 <span class="text-gray-400 line-through text-sm">$18,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Frassie</li>
+            <li>Red</li>
+            <li>20"D x 27"W x 47"H</li>
+            <li>Mid Back</li>
+            <li>Adjustable Lumbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal23" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support, Adjustable Seat Height Ergonomic,
+             Thickened and Widened Cushions Backrest, 175° Reclining Max</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $15,499 <span class="text-gray-400 line-through text-sm">$17,802</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Deep Blue</li>
+            <li>33.27"D x 22.44"W x 12.8"H</li>
+            <li>Solid Back</li>
+            <li>Ergonomic, Rolling, Cushion Availability, Foot Rest </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal24" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Costway Office Computer Desk Chair Gaming Chair Adjustable Swivel w/Footrest</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $18,400  <span class="text-gray-400 line-through text-sm">$20,400</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>49 inches (H) x 27 inches (W) x 27 inches (D)</li>
+            <li>20 inches [W] & 20 inches [D]</li>
+            <li>42 pounds</li>
+            <li>PVC (Polyvinyl Chloride) (Frame)</li>
+            <li>Adult (18 Years and Up)</li>
+            <li>Maximum Height, Floor to Seat Top: 49 inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal25" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest Big and Tall
+             Video Game Chair for Heavy People 400lb with Massager for Adults</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $20,000 <span class="text-gray-400 line-through text-sm">$22,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blue and Black</li>
+            <li>Leather</li>
+            <li>55D x 59W x 131H centimeters</li>
+            <li>18.87 kg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal26" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (6).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Gaming Chair, Racing Style Gaming Chair with Velvet Material Ergonomic Lumbar Support, 
+            Adjustable High Back PU Leather PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $38,745 <span class="text-gray-400 line-through text-sm">$40,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>pink</li>
+            <li>19"D x 15.39"W x 52"H</li>
+            <li>Wing Back</li>
+            <li>Adjustable Ergonomic</li>
+            <li>open back</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal27" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="imG/HEADS (7).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Pro gaming chair with Cushion Upgrade</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $25,000  <span class="text-gray-400 line-through text-sm">$27,000 </span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>White</li>
+            <li>Faux Leather</li>
+            <li>70D x 70W x 128H centimetres</li>
+            <li>Mecha-Stil</li>
+            <li>26.4 Kilograms</li>
+            <li>Metal</li>
+            <li>Product care instructions	Clean with a damp cloth and mild soap</li>
+            <li>Ergonomic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal28" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (8).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">RAZER BARRACUDA X HEADSET (2022)  QUARTZ PINK  WIRELESS  MULTIMODE  DETACHABLE HYPERCLEAR CARDIOID 
+            6 MONTHS WARRANTY HEADSET</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,500,00 <span class="text-gray-400 line-through text-sm">$7,500,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Pink white</li>
+            <li>Wireless USB-C Multi-Platform Connectivity</li>
+            <li>250g Ergonomic Design</li>
+            <li>Razer TriForce 40mm Drivers</li>
+            <li>Detachable Razer HyperClear Cardioid Mic</li>
+            <li>On-Headset Controls</li>
+            <li>20 Hours Battery Life with USB-C Charging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal29" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (9).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Ozeino Gaming Headset, 3D Sound Effects, Noise Eduction Microphone, 
+            Gaming Headphone for Ps4, Ps5, Xbox One, PC, Switch</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,814,23<span class="text-gray-400 line-through text-sm">$3,814,23</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>3.5 mm Jack</li>
+            <li>Green</li>
+            <li>Over Ear</li>
+            <li>32 Ohm</li>
+            <li>Active Noise Cancellation</li>
+            <li>42 dB</li>
+            <li>ZW1-GREEN-2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal30" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/HEADS (10).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">BENGOO G9000 Gaming Headset with Noise Cancelling Mic, Surround Sound, LED Light,
+             Multi-Platform Compatible for PS4 PC Xbox One PS5 Controller</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $12,470 <span class="text-gray-400 line-through text-sm">$15,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blue</li>
+            <li>Adjustable Headband</li>
+            <li>Skin-friendly Earmuffs</li>
+            <li>Soft Head Beam Pad</li>
+            <li>Bass Sourround Sound</li>
+            <li>In-Line Controller</li>
+            <li>G9000 9.6 oz (272.16 grams)</li>
+            <li>3.5mm, USB</li>
+            <li>Works with	Computers</li>
+            <li>Computer Headsets, Gaming Headsets, Stereo Headsets</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

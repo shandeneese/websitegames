@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register</title>
+  <link rel="icon" href="img/shit.jpg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background-image: url('img/shit.jpg');
+      background-size: 100% 100%;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .container {
+      background: rgba(43, 54, 108, 0.7);
+      border-radius: 20px;
+      padding: 40px;
+      width: 350px;
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #4b47bc;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #db23a4;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle-link a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .toggle-link a:hover {
+      text-decoration: underline;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active {
+      display: block;
+    }
+
+    .welcome-text {
+      color: #ffffff;
+      font-size: 60px;
+      font-weight: 700;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      text-align: right;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!--login form-->
+    <form id="loginForm" class="form active">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required>
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit">Login</button>
+      <div class="toggle-link">
+        Don't have an account? <a onclick="toggleForm('register')">Register</a>
+      </div>
+    </form>
+
+     <!--register form-->
+    <form id="registerForm" class="form">
+      <h2>Register</h2>
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" required>
+      </div>
+      <button type="submit">Register</button>
+      <div class="toggle-link">
+        Already have an account? <a onclick="toggleForm('login')">Login</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function toggleForm(form) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('registerForm').classList.remove('active');
+
+      if (form === 'login') {
+        document.getElementById('loginForm').classList.add('active');
+      } else {
+        document.getElementById('registerForm').classList.add('active');
+      }
+    }
+
+    
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+     
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+    
+      if (email && password) {
+       
+        window.location.href = "homepage.html"; 
+      } else {
+        alert("Please enter both email and password.");
+      }
+    });
+  </script>
+</body>
+</html>
+

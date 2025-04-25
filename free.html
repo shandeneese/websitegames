@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FREE FIRE</title>
+  <link rel="icon" href="img/iconfree.webp">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+  <style>
+           /* General styles for the page */
+    body {
+      background-image: url(img/2f6ba133-6c6f-41f4-ac4b-d255b6956f83.jpg);
+      background-size: 100% 100%;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+
+    .title {
+      font-size: 50px;
+      text-align: center;
+      font-family: 'stylish';
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #e1b36d, #c67d4e);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .garena-shells {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .bonus {
+      background-color: #8225ce;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      background-color: #2a3d5a;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+        /* Selected card styles */
+    .selected {
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px 3px gold;
+    }
+
+    .selected-payment {
+      background-color: #6b46c1 !important;
+      color: white;
+    }
+  </style>
+
+<body>
+  <div class="title">Recharge</div>
+          <!-- UID input section -->
+  <h2 style="font-size: 30px; font-family: 'stylish';">1. Enter Uid</h2>
+  <div class="grid grid-cols-3 gap-2 mb-2">
+    <input type="text" placeholder="Enter Uid" class="col-span-2 p-3 border border-gray-300 rounded-lg text-black" />
+  </div>
+  <p class="text-sm text-gray-300">
+         <!-- User guidance for finding UID -->
+    Your UID is shown below your nickname. Please input the complete UID here, e.g. 12345678.
+  </p>
+  <br><br>
+      <!-- Garena Shells selection section -->
+  <h2 style="font-size: 30px; font-family: 'stylish';">2. Choose Garena Shells</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="img/2.png" alt="Garena Shells">
+      <div class="garena-shells">15 Garena Shells</div>
+      <div class="bonus">Get 1 Bonus Garena Shell</div>
+      <div class="price">₱20.50</div>
+    </div>
+    <div class="card">
+      <img src="img/50.webp" alt="Garena Shells">
+      <div class="garena-shells">50 Garena Shells</div>
+      <div class="bonus">Get 5 Bonus Garena Shells</div>
+      <div class="price">₱53.00</div>
+    </div>
+    <div class="card">
+      <img src="img/50.webp" alt="Garena Shells">
+      <div class="garena-shells">150 Garena Shells</div>
+      <div class="bonus">Get 15 Bonus Garena Shells</div>
+      <div class="price">₱159.00</div>
+    </div>
+    <div class="card">
+      <img src="img/200-500.webp" alt="Garena Shells">
+      <div class="garena-shells">250 Garena Shells</div>
+      <div class="bonus">Get 25 Bonus Garena Shells</div>
+      <div class="price">₱264.00</div>
+    </div>
+    <div class="card">
+      <img src="img/200-500.webp" alt="Garena Shells">
+      <div class="garena-shells">500 Garena Shells</div>
+      <div class="bonus">Get 65 Bonus Garena Shells</div>
+      <div class="price">₱530.00</div>
+    </div>
+    <div class="card">
+      <img src="img/1000.webp" alt="Garena Shells">
+      <div class="garena-shells">1000 Garena Shells</div>
+      <div class="bonus">Get 155 Bonus Garena Shells</div>
+      <div class="price">₱1,070.00</div>
+    </div>
+    <div class="card">
+      <img src="img/1000.webp" alt="Garena Shells">
+      <div class="garena-shells">1500 Garena Shells</div>
+      <div class="bonus">Get 265 Bonus Garena Shells</div>
+      <div class="price">₱1,600.00</div>
+    </div>
+    <div class="card">
+      <img src="img/6k.webp" alt="Garena Shells">
+      <div class="garena-shells">2500 Garena Shells</div>
+      <div class="bonus">Get 475 Bonus Garena Shells</div>
+      <div class="price">₱2,650.00</div>
+    </div>
+    <div class="card">
+      <img src="img/6k.webp" alt="Garena Shells">
+      <div class="garena-shells">6042 Garena Shells</div>
+      <div class="bonus">Get 1007 Bonus Garena Shells</div>
+      <div class="price">₱4,750.00</div>
+    </div>
+  </div>
+  <br><br>
+   <!-- Payment method selection -->
+  <h2 style="font-size: 30px; font-family: 'stylish';">3. Select Payment Method</h2>
+  <div class="grid grid-cols-3 gap-4">
+    <button class="border rounded-lg p-3 hover:bg-gray-100">GCash</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">Smart/Sun</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">Card</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">Maya</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">Dito</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">GrabPay</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">7-Eleven</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">Coins.ph</button>
+    <button class="border rounded-lg p-3 hover:bg-gray-100">Bank</button>
+  </div>
+    <!-- Buy section -->
+  <br><br>
+  <h2 style="font-size: 30px; font-family: 'stylish';">4. Buy</h2>
+  <div>
+                <!-- Optional email input -->
+    <p class="text-sm mb-2">
+      OPTIONAL: Enter an email address to receive a receipt and become eligible for promotions and 
+      <span class="text-purple-600 font-semibold">get the 0.5% Rewards</span> saved to your email
+    </p>
+    <input type="email" placeholder="Please enter the email" class="w-full p-2 border border-gray-300 rounded-lg mb-3" style="color: black;" />
+          <!-- Opt-in checkbox -->
+    <label class="flex items-center text-sm">
+      <input type="checkbox" class="mr-2" />
+      Yes, I would like to receive news and promotions in Gmail.
+    </label>
+          <!-- Final Buy button -->
+    <button class="w-full mt-4 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-lg font-semibold">
+      Buy now
+    </button>
+  </div>
+        <!-- JavaScript functionality -->
+  <script>
+    let selectedGarenaShells = null;
+    let selectedPayment = null;
+     // Handle card selection
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", () => {
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+        card.classList.add("selected");
+        selectedGarenaShells = card.querySelector(".garena-shells").innerText;
+      });
+    });
+      // Handle payment button selection
+    document.querySelectorAll(".grid.grid-cols-3 button").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".grid.grid-cols-3 button").forEach(b => b.classList.remove("selected-payment"));
+        button.classList.add("selected-payment");
+        selectedPayment = button.innerText;
+      });
+    });
+       // Handle Buy Now click
+    document.querySelector("button.w-full").addEventListener("click", () => {
+      const Uid = document.querySelector('input[placeholder="Enter Uid"]').value;
+      const email = document.querySelector('input[type="email"]').value;
+          // Check if all selections are made
+          if (!selectedGarenaShells || !selectedPayment) {
+          alert("Please select a Garena Shells package and payment method before buying.");
+          return;
+        }
+        // Check if UID are filled
+        if (!Uid) {
+          alert("Please input a UID before buying.");
+          return;
+        }
+
+ // Create query string with user inputs
+      const params = new URLSearchParams({
+        GarenaShells: selectedGarenaShells,
+        payment: selectedPayment,
+        Uid,
+        email
+      });
+        // Redirect to success page with query parameters
+      window.location.href = `successfree.html?${params.toString()}`;
+    });
+  </script>
+</body>
+</html>

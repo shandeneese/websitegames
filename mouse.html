@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Mouse</title>
+  <link rel="icon" href="img/mouse.webp">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+</head>
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10" >
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Mouses Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal1" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (1).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">SM600 white wireless gaming mouse with a honeycomb shell</h3>
+        <div class="text-red-500 font-bold">$199 <span class="text-gray-400 line-through">$229</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal2" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (second).gif" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">SM802 white wireless gaming mouse with a honeycomb shell design</h3>
+        <div class="text-red-500 font-bold">$100 <span class="text-gray-400 line-through">$150</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal3" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (2).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gamer Fanatic Q15 RGB Wireless Gaming Mouse</h3>
+        <div class="text-red-500 font-bold">$130 <span class="text-gray-400 line-through">$230</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal4" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (3).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">RisoPhy Lightweight Gaming Mouse features a PAW3395 sensor</h3>
+        <div class="text-red-500 font-bold">$200 <span class="text-gray-400 line-through">$500</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal5" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (1).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon M918AK 3-Mode Wireless Gaming Mouse</h3>
+        <div class="text-red-500 font-bold">$299 <span class="text-gray-400 line-through">$350</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal6" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (4).gif" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon M719 Antonium</h3>
+        <div class="text-red-500 font-bold">$199 <span class="text-gray-400 line-through">$299</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal7" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (5).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Redragon M612 Predator RGB gaming mouse</h3>
+        <div class="text-red-500 font-bold">$650 <span class="text-gray-400 line-through">$750</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal8" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (2).jpg " alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">XVX G705 Kanagawa Themed Wired Gaming Mouse</h3>
+        <div class="text-red-500 font-bold">$475<span class="text-gray-400 line-through">$675</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal9" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/mouse (3).gif" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Rocksoul RSMS-00115 6D Optical Gaming Mouse</h3>
+        <div class="text-red-500 font-bold"> $823 <span class="text-gray-400 line-through">$923</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal10" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/MOUSE.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Frontech MS-0050 wired USB gaming mouse</h3>
+        <div class="text-red-500 font-bold">$265<span class="text-gray-400 line-through">$365</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (1).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">SM600 white wireless gaming mouse with a honeycomb shell</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $199 <span class="text-gray-400 line-through text-sm">$299</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Connectivity: Tri-mode (Bluetooth 5.1, 2.4GHz wireless, and Type-C wired).</li>
+            <li>DPI: Adjustable, with up to 8000 DPI.</li>
+            <li>Design: Lightweight honeycomb shell for comfort and ventilation.</li>
+            <li>Features: Side buttons, programmable macros, and RGB lighting.</li>
+            <li>Battery: Up to 20 days of battery life.</li>
+            <li>Compatibility: Supports PC, Mac, laptops, tablets, and desktops.</li>
+            <li>Ergonomics: Designed for comfortable, long-term use.</li>
+            <li>Color Options: Available in black, pink, green and white.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (second).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">SM802 white wireless gaming mouse with a honeycomb shell design</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $100 <span class="text-gray-400 line-through text-sm">$150</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Connectivity: Tri-mode connectivity with Bluetooth 5.1 and 2.4GHz wireless options.</li>
+            <li>Design: Lightweight honeycomb shell for enhanced heat dissipation and comfortable use.</li>
+            <li>RGB Lighting: Customizable RGB rainbow backlighting for a visually appealing experience.</li>
+            <li>DPI: Adjustable DPI up to 10000 for precise tracking.</li>
+            <li>Battery: Rechargeable battery offering extended use. </li>
+            <li>Buttons: Features side buttons for quick access to functions.</li>
+            <li>Compatibility: Compatible with PC, Mac, laptops, and tablets.</li>
+            <li>Customization: Some models offer customizable macro settings and swappable shells.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (2).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">RisoPhy Lightweight Gaming Mouse features a PAW3395 sensor</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $130 <span class="text-gray-400 line-through text-sm">$230</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Wireless: It uses a 2.4GHz wireless connection.
+            <li>RGB Lighting: It has customizable, colorful RGB lighting.</li>
+            <li>DPI: Adjustable DPI levels, typically between 1200-3200 DPI, and up to 26000 DPI available through software.</li>
+            <li>Buttons: Features multiple buttons, some programmable for customized controls.</li>
+            <li>Ergonomic Design: Designed for comfort during extended use.</li>
+            <li>Compatibility: Compatible with Windows, macOS, and other operating systems.</li>
+            <li>Battery: Rechargeable battery with a long lifespan and power-saving modes.</li>
+            <li>Durability: Built with quality materials for long-term use.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">The RisoPhy Lightweight Gaming Mouse features a PAW3395 sensor</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $200 <span class="text-gray-400 line-through text-sm">$500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Sensor: PAW3395</li>
+            <li>DPI: Up to 26K</li>
+            <li>Connectivity: Wired, 2.4 GHz, and Bluetooth</li>
+            <li>Buttons: 6 programmable buttons</li>
+            <li>Backlighting: Chroma RGB</li>
+            <li>Ergonomics: Ergonomic design</li>
+            <li>Weight: Some models are lightweight, with the Superlight version at 62g, while others weigh 190 grams.</li>+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon M918AK 3-Mode Wireless Gaming Mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $299 <span class="text-gray-400 line-through text-sm">$350</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>supports three connection modes: 2.4 GHz wireless, Bluetooth, and wired.</li>
+            <li>Type: 3-Mode Wireless Gaming Mouse</li>
+            <li>Weight: 55 grams</li>
+            <li>Programmable Buttons: 5 </li>
+            <li>Polling Rate: 1KHz</li>          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (4).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon M719 Antonium</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $199 <span class="text-gray-400 line-through text-sm">$299</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 10,000 DPI with adjustable DPI levels (500/1000/2000/3000/5000) and software-adjustable DPI from 100 to 10000.</li>
+            <li>Polling Rate: 1000 Hz, switchable to 125Hz/250Hz/500Hz.</li>
+            <li>Buttons: 8 programmable buttons (including a rapid fire button).</li>
+            <li>Backlit Modes: 8 backlight modes with 16.8 million customizable colors.</li>
+            <li>Tracking System: Optical.</li>
+            <li>Interface: USB 2.0 full speed.</li>
+            <li>Cable: 1.8M braided-fiber cable.</li>
+            <li>Software: Professional programming software for button customization, DPI, polling rate, and RGB lighting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal7" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (5).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Redragon M612 Predator RGB gaming mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $650 <span class="text-gray-400 line-through text-sm">$750</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Sensor: Pixart P3104 optical</li>
+            <li>DPI: 500-8000 DPI </li>
+            <li>Programmable Buttons: 11</li>
+            <li>Backlit Modes: 5</li>
+            <li>Acceleration: 15G</li>
+            <li>Max Speed: 45"</li>
+            <li>Connection: Wired</li>
+            <li>Weight: 145g</li>
+            <li>Product Dimensions: 12.6L x 7.5W cm</li>
+            <li>Cable Length: 1.8m braided fiber cable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal8" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">XVX G705 Kanagawa Themed Wired Gaming Mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $475 <span class="text-gray-400 line-through text-sm">$675</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 200-12,000</li>
+            <li>Polling Rate: 125/250/500/1000Hz</li>
+            <li>Buttons: 7 programmable</li>
+            <li>Lighting: Customizable RGB lighting with 12 modes</li>
+            <li>Sensor: PixArt PMW3327</li>
+            <li>Connection: Wired, USB</li>
+            <li>Cord Length: 1.8m</li>
+            <li>Dimensions: 70x130x45mm</li>
+            <li>Weight: 95g</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal9" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/mouse (3).gif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Rocksoul RSMS-00115 6D Optical Gaming Mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $823 <span class="text-gray-400 line-through text-sm">$923</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>6D high-definition optical technology.</li>
+            <li>Selectable DPI (dots per inch).</li>
+            <li>3.5G infrared sensor.</li>
+            <li>2750 DPI.</li>
+            <li>Equipped with a scroll wheel.</li>
+            <li>Designed for gaming with a distinct aesthetic.</li>
+            <li>Connects via USB 2.0.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal10" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/MOUSE.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Frontech MS-0050 wired USB gaming mouse</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $265 <span class="text-gray-400 line-through text-sm">$365</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 3600 for precise tracking.</li>
+            <li>Keys: 6 programmable keys for customized controls.</li>  
+            <li>Lighting: 7 LED lighting options for aesthetic appeal.</li>
+            <li>Connectivity: USB plug-and-play functionality.</li>
+            <li>Compatibility: Compatible with PC, desktop, Mac, and laptop.</li>
+            <li>Warranty: 1 year.</li>       
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

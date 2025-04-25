@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Controllers</title>
+  <link rel="icon" href="img/contr.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10">
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Gaming Controllers Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <a href="#modal111" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 10.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Xbox Wireless Controller Shock Red + Xbox Play & Charge Kit M</h3>
+        <div class="text-red-500 font-bold">$4,756 <span class="text-gray-400 line-through">$5,739</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal112" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 9.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Wireless Game Controller Transparent Gamepad - LOVNOV Rainbow Gaming Controller RGB Light for iOS, Android,</h3>
+        <div class="text-red-500 font-bold">$1500.99 <span class="text-gray-400 line-through">$3500.99</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal113" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 8.webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">WIRELESS PERFORMANCE XBOX CONTROLLER</h3>
+        <div class="text-red-500 font-bold">$4,500 <span class="text-gray-400 line-through">$6,499</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal114" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control 7.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Xbox Soft Touch Design Custom Gaming Controller -Soft Shell for Comfort Grip X for Microsoft Xbox (Waves)</h3>
+        <div class="text-red-500 font-bold">$7,998 <span class="text-gray-400 line-through">$9,998</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal115" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (6).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">EasySMX X20 Wireless Gaming Controller with RGB Backlit, 2-Stage Hall Effect Stick</h3>
+        <div class="text-red-500 font-bold">$5,000 <span class="text-gray-400 line-through">$6,000</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal116" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (5).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">EasySMX X05 Wireless Controller for PC/Android/Steam Deck- Bluetooth Controller Gamepad with Hall Effect Joysticks</h3>
+        <div class="text-red-500 font-bold">$2,700 <span class="text-gray-400 line-through">$3,800</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal117" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (4).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">BINBOKPLAY Switch Controller, Wireless Switch Pro Controller for Switch/Switch Lite/Switch OLED</h3>
+        <div class="text-red-500 font-bold">$13,159 <span class="text-gray-400 line-through">$15,096.90</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal118" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (3).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">IINE Aphrodite's Bloom Wireless Controller with Charging Dock</h3>
+        <div class="text-red-500 font-bold">$3,300.00<span class="text-gray-400 line-through">$4,500,00</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal119" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (2).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Controller Gamepad for Switch, PC, for iOS, for Android, Game Controller, Wireless Pro Controller, Gamepad</h3>
+        <div class="text-red-500 font-bold"> $1,823 <span class="text-gray-400 line-through">$2,923</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal110" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/control (1).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gamesir T4n Pro Super Nova Multi-Platform Wireless Game Controller</h3>
+        <div class="text-red-500 font-bold">$1,595.00<span class="text-gray-400 line-through">$2,895.00</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal111" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 10.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Xbox Wireless Controller Shock Red + Xbox Play & Charge Kit M</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,756 <span class="text-gray-400 line-through text-sm">$5,739</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>The new hybrid D-Pad allows for accurate yet familiar input</li>
+            <li>Thanks to the new share button, you can easily record and share content such as screenshots during the game.</li>
+            <li>The 3.5 mm stereo headset jack allows you to connect compatible headsets and headphones.</li>
+            <li>Always stay in the game with the Xbox Play & Charge Kit + USB-C cable.</li>
+            <li>Charge during or after your game, even when your Xbox is in standby.</li>
+            <li>The long-lasting, rechargeable battery is fully charged after under 4 hours.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal112" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 9.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Wireless Game Controller Transparent Gamepad - LOVNOV Rainbow Gaming Controller RGB Light for iOS, Android, Nintendo Switch, P5, P4, P3, PC, Dual Motor See Through Gamepad Controller</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1500.99 <span class="text-gray-400 line-through text-sm">$3500.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Introducing the ultimate gaming controller that takes your gaming experience to new heights - the LOVNOV Multi-Platform Gaming Controller. Engineered to perfection, this controller is designed to work seamlessly across various platforms, ensuring compatibility with iOS 13.4+, Android 6.0+, Win7.0+, and a plethora of devices including iPhone, iPad, Samsung Galaxy series, Huawei, OPPO, VIVO, One Plus, tablets, PCs, MacBooks, notebooks, laptops, Nintendo Switch/Lite/Oled, and P3/P4/P5. Whether you're a mobile gamer, console enthusiast, or PC gamer, this controller has got you covered</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal113" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 8.webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">WIRELESS PERFORMANCE XBOX CONTROLLER</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $4,500 <span class="text-gray-400 line-through text-sm">$6,499</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>High-Performance Grip.</li>
+            <li>Four Remappable Paddles.</li>
+            <li>Wireless and Wired Connectivity..</li>
+            <li>Removeable Faceplate.</li>
+            <li>lnterchangeable Thumbsticks..</li>
+            <li>Rumbles in.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal114" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control 7.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Xbox Soft Touch Design Custom Gaming Controller -Soft Shell for Comfort Grip X for Microsoft Xbox (Waves)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $7,998 <span class="text-gray-400 line-through text-sm">$9,998</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>1 lbs (450 grams)</li>
+            <li>2021-05-15 22:17:13</li>
+            <li>Enhance your gaming experience with the Xbox Custom Modded Rapid Fire Controller. Designed with a soft shell for a comfortable grip, this custom Xbox controller is perfect for extended gaming sessions. Featuring the largest variety of modes, including the Flames mode, this controller allows you to dominate the competition.</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal115" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (6).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">EasySMX X20 Wireless Gaming Controller with RGB Backlit, 2-Stage Hall Effect Stick, 1000Hz Polling Rate, 6-Axis Gyro on Multi-Platform,</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $5,000 <span class="text-gray-400 line-through text-sm">$6,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Buttons- Compatible with PC/Switch/Steam/Android</li>
+            <li>Elite 2-Way Trigger Lock: Customize trigger sensitivity with two adjustable positions for faster</li>
+            <li>Detachable Hall Sticks: Enhance your controller's versatility with thumbsticks that can be detached</li>
+            <li>Ultra-Fast 1000Hz Polling Rate: Achieve virtually no input lag with a 1000Hz polling rate in both wired and 2.4G wireless modes</li>
+            <li>Full Mecha-tactile Buttons: Enjoy the distinct clicky feedback and quicker responses from mechanical buttons on the action buttons (ABXY)</li>          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal116" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">EasySMX X05 Wireless Controller for PC/Android/Steam Deck- Bluetooth Controller Gamepad with Hall Effect Joysticks and Trigger,Turbo,Rumble Vibration</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,700  <span class="text-gray-400 line-through text-sm">$3,800 </span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>RGB Lighting</li>
+            <li>The X05 game controller features RGB lighting effects </li>
+            <li>Enjoy enhanced joystick control with our four hall effect sensors</li>
+            <li>Your X05 PC controller's ceramic charging cable ensures a stable and reliable wireless connection</li>
+            <li>Compared to traditional polymer lithium-ion batteries</li>
+            <li>Our controller is designed to be compatible with various platforms, including PC, Switch, iPhone and Android.</li>
+            <li>The game controller offers a mode switch key, allowing you to seamlessly switch between different modes or configurations to suit their gaming preferences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal117" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">BINBOKPLAY Switch Controller, Wireless Switch Pro Controller for Switch/Switch Lite/Switch OLED, RGB Adjustable LED Wireless Remote Gamepad with 
+            Unique Crack/Motion Control/Turbo/ALPS Joystick</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $13,159 <span class="text-gray-400 line-through text-sm">$15,096.90</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Upgraded Lighting Effects and Comfortable Surface】BINBOKPALY upgraded the surface material and
+                 crackle effect of the wireless switch pro controller,</li>
+            <li>Back Programmable Button】The BINBOKPLAY Switch pro Controller comes with two additional buttons on the back
+                 that can be mapped for single button or macro functions. </li>
+            <li>Experience gaming at its finest with the ALPS joystick imported from Japan. Switch Pro 
+                Controller is designed with a ALPS joystick rotation lifespan of over 2,000,000 rotations.</li>
+            <li>Acceleration: The BINBOKPLAY Switch Controllers features a no-dead zone mode that responds </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal118" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">IINE Aphrodite's Bloom Wireless Controller with Charging Dock</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $3,300.00 <span class="text-gray-400 line-through text-sm">$4,500,00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Smart Charging Dock :controller charges when placed down /
+                 controller wakes and reconnects when lifted up</li>
+            <li>160G controller</li>
+            <li>pink white</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal119" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Controller Gamepad for Switch, PC, for iOS, for Android, Game Controller, Wireless Pro Controller, Gamepad,
+             Motion Control, Remote Joystick with Motor Vibration, Supports</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $823 <span class="text-gray-400 line-through text-sm">$923</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>PUSOKEI</li>
+            <li>PC, Nintendo Switch, IOS, Android</li>
+            <li>Gamepad</li>
+            <li>Bluetooth</li>
+            <li>Default</li>
+            <li>Compatible: This wireless pro controller is fully compatible for
+                 Switch, PC, for iOS, for Android, including all keys of the original for Switch.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal110" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/control (1).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gamesir T4n Pro Super Nova Multi-Platform Wireless Game Controller </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,595.00 <span class="text-gray-400 line-through text-sm">$2,895.00</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>(Blue/Black, Pink/White)</li>
+            <li>The new  GameSir Super Nova  is a controller designed to be used with  multiple platforms</li>  
+            <li> such as the Nintendo Switch and PC. This model stands out for its different connection options</li>
+            <li>features such as the Hall linear triggers, Hall buttons and its XBOX vibration motor</li>
+            <li>Magnegtic removable masks</li>     
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+  </html>

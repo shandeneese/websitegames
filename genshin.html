@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GENSHIN IMPACT</title>
+  <link rel="icon" href="img/icongenshin.jpg">
+  <style>
+        /* General styles for the page */
+    body {
+      background-image: url(img/2f6ba133-6c6f-41f4-ac4b-d255b6956f83.jpg);
+      background-size: 100% 100%;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+
+    .title {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #e1b36d, #c67d4e);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .genesis-crystals {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .bonus {
+      background-color: #8225ce;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      background-color: #2a3d5a;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+            /* Selected card styles */
+    .selected {
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px 3px gold;
+}
+
+.selected-payment {
+  background-color: #6b46c1 !important;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+    <div class="title" style="font-size: 50px;  font-family: 'stylish';">Recharge</div>
+    <!-- User ID input section -->
+    <div>
+        <h2 style="font-size: 30px;  font-family: 'stylish';">1. Enter ID and Select Server</h2>
+        <div class="grid grid-cols-3 gap-2 mb-2">
+          <input 
+            type="text" 
+            placeholder="Enter User ID" 
+            class="col-span-2 p-3 border border-gray-300 rounded-lg text-black"
+          />
+        </div>
+        <p class="text-sm text-gray-300">
+          <!-- User guidance for finding User ID -->
+          To find your Genesis Crystals ID, please select your profile page and copy your Genesis Crystals ID+Tag using the button next to your Genesis Crystals ID. (Example: Westbourne#SEA) </p>
+      </div>
+      <br><br>
+            <!-- Genesis Crystals selection section -->
+  <h2 style="font-size: 30px;  font-family: 'stylish';">2. Choose Ceystals</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="img/genshin0.webp" alt="Genesis Crystals">
+      <div class="genesis-crystals">15 Genesis Crystals</div>
+      <div class="bonus">Get 1 Bonus Genesis Crystals</div>
+      <div class="price">₱20.50</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin0.webp" alt="Genesis Crystals">
+      <div class="genesis-crystals">50 Genesis Crystals</div>
+      <div class="bonus">Get 5 Bonus Genesis Crystals</div>
+      <div class="price">₱53.00</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin0.webp" alt="Genesis Crystals">
+      <div class="genesis-crystals">150 Genesis Crystals</div>
+      <div class="bonus">Get 15 Bonus Genesis Crystals</div>
+      <div class="price">₱159.00</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin2.png" alt="Genesis Crystals">
+      <div class="genesis-crystals">250 Genesis Crystals</div>
+      <div class="bonus">Get 25 Bonus Genesis Crystals</div>
+      <div class="price">₱264.00</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin2.png" alt="Genesis Crystals">
+      <div class="genesis-crystals">500 Genesis crystals</div>
+      <div class="bonus">Get 65 Bonus Genesis Crystals</div>
+      <div class="price">₱530.00</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin2.png" alt="Genesis Crystals">
+      <div class="genesis-crystals">1000 Genesis Crystals</div>
+      <div class="bonus">Get 155 Bonus Genesis Crystals</div>
+      <div class="price">₱1,070.00</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin2.png" alt="Genesis Crystals">
+      <div class="genesis-crystals">1500 Genesis Crystals</div>
+      <div class="bonus">Get 265 Bonus Genesis Crystals</div>
+      <div class="price">₱1,600.00</div>
+    </div>
+    <div class="card">
+      <img src="img/genshin5h.webp" alt="Genesis Crystals">
+      <div class="genesis-crystals">2500 Genesis Crystals</div>
+      <div class="bonus">Get 475 Bonus Genesis Crystals</div>
+      <div class="price">₱2,650.00</div>
+    </div>
+      <div class="card">
+        <img src="img/genshin5h.webp" alt="Genesis Crystals">
+        <div class="genesis-crystals">6042 VP</div>
+        <div class="bonus">Get 1007 Bonus Genesis Crystals</div>
+        <div class="price">₱4.750.00</div>
+      </div>
+      <div class="card">
+        <img src="img/genshinmooon.webp" alt="Genesis Crystals">
+        <div class="genesis-crystals">Blessing of the Welkin Moon</div>
+        <div class="price">₱280.00</div>
+      </div>
+    </div>
+</div>
+<br><br>
+ <!-- Payment method selection -->
+<h2 style="font-size: 30px;  font-family: 'stylish';">3. Select Payment Method</h2>
+<script src="https://cdn.tailwindcss.com"></script>
+      <div class="grid grid-cols-3 gap-4">
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">GCash</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">Smart/Sun</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">Card</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">Maya</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">Dito</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">GrabPay</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">7-Eleven</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">Coins.ph</button>
+        <button class="border rounded-lg p-3 flex items-center justify-center hover:bg-gray-100">Bank</button>
+      </div>
+    </div>
+        <!-- Buy section -->
+     <br><br>
+     <h2 style="font-size: 30px;  font-family: 'stylish';">4. Buy</h2>
+    <div>
+            <!-- Optional email input -->
+      <p class="text-sm mb-2">
+        OPTIONAL: Enter an email address to receive a receipt and become eligible for promotions and 
+        <span class="text-purple-600 font-semibold">get the 0.5%  Rewards</span> saved to your email
+      </p>
+      <input 
+        type="email" 
+        placeholder="Please enter the email" 
+        class="w-full p-2 border border-gray-300 rounded-lg mb-3"
+        style="color: black;"
+      />
+            <!-- Opt-in checkbox -->
+      <label class="flex items-center text-sm">
+        <input type="checkbox" class="mr-2" />
+        Yes, I would like to receive news and promotions in Gmail.
+      </label>
+            <!-- Final Buy button -->
+      <button class="w-full mt-4 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-lg font-semibold">
+        Buy now
+      </button>
+    </div>
+        <!-- JavaScript functionality -->
+    <script>
+      let selectedGenesisCrystals = null;
+      let selectedPayment = null;
+         // Handle card selection
+
+      document.querySelectorAll(".card").forEach(card => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+          card.classList.add("selected");
+          selectedGenesisCrystals = card.querySelector(".genesis-crystals").innerText;
+        });
+      });
+    
+      // Handle payment button selection
+      document.querySelectorAll("button").forEach(button => {
+        if (button.innerText !== "Buy now") {
+          button.addEventListener("click", () => {
+            document.querySelectorAll("button").forEach(b => b.classList.remove("selected-payment"));
+            button.classList.add("selected-payment");
+            selectedPayment = button.innerText;
+          });
+        }
+      });
+    
+             // Handle Buy Now click
+      document.querySelector("button.w-full").addEventListener("click", () => {
+        const userID = document.querySelector('input[placeholder="Enter User ID"]').value;
+        const email = document.querySelector('input[type="email"]').value;
+
+        // Check if all selections are made
+        if (!selectedGenesisCrystals || !selectedPayment) {
+          alert("Please select a Genesis Crystals package and payment method before buying.");
+          return;
+        }
+        // Check if User ID  are filled
+        if (!userID) {
+          alert("Please input a User ID before buying.");
+          return;
+        }
+
+            // Create query string with user inputs
+        const params = new URLSearchParams({
+          GenesisCrystals: selectedGenesisCrystals,
+          payment: selectedPayment,
+          userID,
+          email
+        });
+            // Redirect to success page with query parameters
+        window.location.href = `successgenhin.html?${params.toString()}`;
+      });
+    </script>
+    
+</body>
+</html>

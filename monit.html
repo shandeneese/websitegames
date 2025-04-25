@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Mouse</title>
+  <link rel="icon" href="img/LG-Monitor-UltraGear-27GN950-3.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+</head>
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10" >
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Monitors Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal61" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/LG-Monitor-UltraGear-27GN950-3.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">LG UltraGear 27GN950-B</h3>
+        <div class="text-red-500 font-bold">$799.99 <span class="text-gray-400 line-through">$999.99</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal62" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/samsung features.avif" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Samsung Odyssey G7 (LC32G75TQSNXZA)</h3>
+        <div class="text-red-500 font-bold">$609.59 <span class="text-gray-400 line-through">$781.65</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal63" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/alienwareAW3423WF_1.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Alienware AW3423DWF (QD-OLED)</h3>
+        <div class="text-red-500 font-bold">$799 <span class="text-gray-400 line-through">$899</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal64" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/ViewSonic Elite XG270.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">ViewSonic Elite XG270</h3>
+        <div class="text-red-500 font-bold">$330 <span class="text-gray-400 line-through">$430</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal65" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Asus-ROG-Swift.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">ASUS ROG Swift PG259QN</h3>
+        <div class="text-red-500 font-bold">$699 <span class="text-gray-400 line-through">$799</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal66" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/GIGA.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm"> Gigabyte M28U</h3>
+        <div class="text-red-500 font-bold">$399 <span class="text-gray-400 line-through">$499</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal67" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/acer-predator-xb273u-gx-01.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Acer Predator XB273U GX</h3>
+        <div class="text-red-500 font-bold">$519.99 <span class="text-gray-400 line-through">$619.99</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal68" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/j.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">MSI MPG Artymis 343CQR</h3>
+        <div class="text-red-500 font-bold">$399<span class="text-gray-400 line-through">$499</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal69" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/AOC Agon PROAG27QZM.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AOC Agon PRO AG274QZM</h3>
+        <div class="text-red-500 font-bold"> $469 <span class="text-gray-400 line-through">$569</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal70" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/BenQ MOBIUZEX2710U.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">BenQ MOBIUZ EX2710U</h3>
+        <div class="text-red-500 font-bold">$359<span class="text-gray-400 line-through">$459</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal61" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/LG-Monitor-UltraGear-27GN950-3.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">LG UltraGear 27GN950-B</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $799.99 <span class="text-gray-400 line-through text-sm">$999.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 3840 x 2160 (4K UHD)</li>
+            <li>Panel: Nano IPS</li>
+            <li>Refresh Rate: 144Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: G-SYNC Compatible, FreeSync Premium Pro</li>
+            <li>Extras: VESA DisplayHDR 600, great color + speed combo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal62" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/samsung features.avif" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Samsung Odyssey G7 (LC32G75TQSNXZA)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $609.59 <span class="text-gray-400 line-through text-sm">$781.65</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 32"</li>
+            <il>Resolution: 2560 x 1440 (QHD)</il>
+            <il>Panel: VA</il>
+            <il>Refresh Rate: 240Hz</il>
+            <il>Response Time: 1ms</il>
+            <il>Sync: G-SYNC + FreeSync Premium Pro</il>
+            <il>Curve: 1000R — super immersive</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal63" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/alienwareAW3423WF_1.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Alienware AW3423DWF (QD-OLED)</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $799 <span class="text-gray-400 line-through text-sm">$899</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 34" Ultrawide</li>
+            <li>Resolution: 3440 x 1440 (UWQHD)</li>
+            <li>Panel: QD-OLED</li>
+            <li>Refresh Rate: 165Hz</li>
+            <li>Response Time: 0.1ms</li>
+            <li>Sync: FreeSync Premium Pro, G-SYNC Compatible</li>
+            <li>Visuals: Deep blacks, rich contrast</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal64" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/ViewSonic Elite XG270.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">ViewSonic Elite XG270</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $330 <span class="text-gray-400 line-through text-sm">$430</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 1920 x 1080 (Full HD)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 240Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: G-SYNC Compatible</li>
+            <li>Style: RGB accents, gamer aesthetic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal65" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Asus-ROG-Swift.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">ASUS ROG Swift PG259QN</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $699 <span class="text-gray-400 line-through text-sm">$799</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 24.5"</li>
+            <li>Resolution: 1920 x 1080 (Full HD)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 360Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: NVIDIA G-SYNC</li>
+            <li>Best For: Esports, ultra-fast reaction</li>   
+          </ul>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal66" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/GIGA.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gigabyte M28U</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $399<span class="text-gray-400 line-through text-sm">$499</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 28"</li>
+            <li>Resolution: 3840 x 2160 (4K)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 144Hz</li>
+            <li>Response Time: 1ms MPRT</li>
+            <li>Sync: FreeSync Premium Pro, G-SYNC Compatible</li>
+            <li>HDMI 2.1: Yes — great for PS5/XSX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal67" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/acer-predator-xb273u-gx-01.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Acer Predator XB273U GX </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $519.99<span class="text-gray-400 line-through text-sm">$619.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 2560 x 1440 (QHD)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 270Hz (OC)</li>
+            <li>Response Time: 0.5ms</li>
+            <li>Sync: G-SYNC Compatible</li>
+            <li>Colors + Speed: Great all-arounder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal68" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/j.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">MSI MPG Artymis 343CQR</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $399 <span class="text-gray-400 line-through text-sm">$499</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 34" Ultrawide</li>
+            <li>Resolution: 3440 x 1440 (UWQHD)</li>
+            <li>Panel: VA</li>
+            <li>Refresh Rate: 165Hz</li>
+            <li>Response Time: 1ms</li>
+            <li>Sync: FreeSync Premium</li>
+            <li>Immersive: 1000R curve, great for racing/FPS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal69" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/AOC Agon PROAG27QZM.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AOC Agon PRO AG274QZM</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $469 <span class="text-gray-400 line-through text-sm">$569</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Size: 27"</li>
+            <li>Resolution: 2560 x 1440 (QHD)</li>
+            <li>Panel: Mini-LED IPS</li>
+            <li>Refresh Rate: 240Hz</li>
+            <li>HDR: DisplayHDR 1000</li>
+            <li>Sync: G-SYNC + FreeSync</li>
+            <li>Vibrant + Fast: For high-end gaming</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal70" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/BenQ MOBIUZEX2710U.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">BenQ MOBIUZ EX2710U</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $359 <span class="text-gray-400 line-through text-sm">$459</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>DPI: 3600 for precise tracking.</li>
+            <li>Resolution: 3840 x 2160 (4K)</li>
+            <li>Panel: IPS</li>
+            <li>Refresh Rate: 144Hz</li>
+            <li>Response Time: 1ms MPRT</li>
+            <li>Sync: FreeSync Premium</li>
+            <li>Speakers: Built-in TreVolo audio</li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Chair</title>
+  <link rel="icon" href="img/chair.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+      
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10" >
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Gaming chair Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal11" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (1).webp" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">TTRacing Swift X Pro Gaming Chair - yellow back</h3>
+        <div class="text-red-500 font-bold">$13,499 <span class="text-gray-400 line-through">$16,999</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal12" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (2).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Frassie Gaming Chair with RGB LED Lights</h3>
+        <div class="text-red-500 font-bold">$16,999 <span class="text-gray-400 line-through">$18,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal13" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (3).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support - Deep Blue</h3>
+        <div class="text-red-500 font-bold">$15,499 <span class="text-gray-400 line-through">$17,802</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal14" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (4).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Costway Office Computer Desk Chair Gaming Pink and Black</h3>
+        <div class="text-red-500 font-bold">$18,400 <span class="text-gray-400 line-through">$20,400</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal15" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (5).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest - Blue and Black</h3>
+        <div class="text-red-500 font-bold">$20,000 <span class="text-gray-400 line-through">$22,500</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal16" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (6).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Gaming Chair, Racing Style Gaming Chair</h3>
+        <div class="text-red-500 font-bold">$38,745 <span class="text-gray-400 line-through">$40,000</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal17" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (7).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">AutoFull C3 Pro gaming chair with Cushion Upgrade - White</h3>
+        <div class="text-red-500 font-bold">$25,000 <span class="text-gray-400 line-through">$27,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal18" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (8).jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Gaming Chair High Back Ergonomic Computer Racing Chair Blackblue</h3>
+        <div class="text-red-500 font-bold">$17,100 <span class="text-gray-400 line-through">$19,100</span></div>
+      </a>
+
+      <!-- Product Card 1 -->
+      <a href="#modal19" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img//chair (9).jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">VANSPACE RGB Gaming Chair with Bluetooth Speakers and LED Lights Ergonomic Massage Computer Game Chair - Red black</h3>
+        <div class="text-red-500 font-bold">$3,525,989 <span class="text-gray-400 line-through">$4,925,000</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal20" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/chair (10).webp" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Epic Gamers Scorpion Hydraulic Gaming Chair-Black</h3>
+        <div class="text-red-500 font-bold">$450,500 <span class="text-gray-400 line-through">$500,000</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal11" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (1).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">TTRacing Swift X Pro Gaming Chair - Wolverine Edition</h2>
+          <p class="text-red-600 text-xl font-bold">
+            ₱13,499 <span class="text-gray-400 line-through text-sm">₱16,999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>yellow back</li>
+            <li>Achieve peak comfort with a relentless 135-degree recline</li>
+            <li>UNBREAKABLE COMFORT
+              WITH PREMIUM FOAM-PADDED ARMRESTS</li>
+            <li>EXPANSIVE ERGONOMIC EXCELLENCE IN A LEGENDARY SEAT</li>
+            <li>EXPERIENCE SAVAGE ADAMANTIUM COMFORT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal12" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (2).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Frassie Gaming Chair with RGB LED Lights, Video Game Chair Ergonomic
+           Computer Gamer Chair with Massage Lumbar Support</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $16,999 <span class="text-gray-400 line-through text-sm">$18,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Frassie</li>
+            <li>Red</li>
+            <li>20"D x 27"W x 47"H</li>
+            <li>Mid Back</li>
+            <li>Adjustable Lumbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal13" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (3).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Massage Gaming Chair 7-Point, Office Chair with Footrest and Lumbar Support, Adjustable Seat Height Ergonomic,
+             Thickened and Widened Cushions Backrest, 175° Reclining Max</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $15,499 <span class="text-gray-400 line-through text-sm">$17,802</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Deep Blue</li>
+            <li>33.27"D x 22.44"W x 12.8"H</li>
+            <li>Solid Back</li>
+            <li>Ergonomic, Rolling, Cushion Availability, Foot Rest </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal14" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (4).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Costway Office Computer Desk Chair Gaming Chair Adjustable Swivel w/Footrest</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $18,400  <span class="text-gray-400 line-through text-sm">$20,400</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>49 inches (H) x 27 inches (W) x 27 inches (D)</li>
+            <li>20 inches [W] & 20 inches [D]</li>
+            <li>42 pounds</li>
+            <li>PVC (Polyvinyl Chloride) (Frame)</li>
+            <li>Adult (18 Years and Up)</li>
+            <li>Maximum Height, Floor to Seat Top: 49 inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal15" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (5).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HOFFREE Gaming Chair Massage with Speakers Bluetooth and Footrest Big and Tall
+             Video Game Chair for Heavy People 400lb with Massager for Adults</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $20,000 <span class="text-gray-400 line-through text-sm">$22,500</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blue and Black</li>
+            <li>Leather</li>
+            <li>55D x 59W x 131H centimeters</li>
+            <li>18.87 kg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal16" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (6).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Gaming Chair, Racing Style Gaming Chair with Velvet Material Ergonomic Lumbar Support, 
+            Adjustable High Back PU Leather PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $38,745 <span class="text-gray-400 line-through text-sm">$40,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>pink</li>
+            <li>19"D x 15.39"W x 52"H</li>
+            <li>Wing Back</li>
+            <li>Adjustable Ergonomic</li>
+            <li>open back</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal17" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (7).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">AutoFull C3 Pro gaming chair with Cushion Upgrade</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $25,000  <span class="text-gray-400 line-through text-sm">$27,000 </span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>White</li>
+            <li>Faux Leather</li>
+            <li>70D x 70W x 128H centimetres</li>
+            <li>Mecha-Stil</li>
+            <li>26.4 Kilograms</li>
+            <li>Metal</li>
+            <li>Product care instructions	Clean with a damp cloth and mild soap</li>
+            <li>Ergonomic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal18" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (8).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Gaming Chair High Back Ergonomic Computer Racing Chair Adjustable Office Chair with
+             Footrest, Lumbar Support Swivel</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $17,100 <span class="text-gray-400 line-through text-sm">$19,100</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Blackblue</li>
+            <li>Leather Polyvinyl Chloride</li>
+            <li>Upgraded Version w/Thickened Footrest</li>
+            <li>21.84 kg</li>
+            <li>Polyvinyl Chloride</li>
+            <li>Ergonomic, Rolling, Cushion Availability</li>
+            <li>Seat material type	Leather</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal19" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (9).jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">VANSPACE RGB Gaming Chair with Bluetooth Speakers and LED Lights Ergonomic Massage Computer Game Chair with
+             Footrest High Back Music Video Game Chair with Lumbar Support</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $3,525,989 <span class="text-gray-400 line-through text-sm">$4,925,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Red+black</li>
+            <li>Leather Suede</li>
+            <li>Adjustable Lumbar, Adjustable Height, Adjustable Headrest, 
+            Adjustable Backrest, Foot Rest</li>
+            <li>Wipe Clean</li>
+            <li>1.0 Count</li>
+            <li>Memory Foam</li>
+            <li>Recommended Uses For Product	Office</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal20" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/chair (10).webp" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Epic Gamers Scorpion Hydraulic Gaming Chair-Black</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $450,500 <span class="text-gray-400 line-through text-sm">$500,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li> 280lbs / 125 kg</li>
+            <li>
+              32:9 Single ultra-wide curved monitor up to 49"
+              21:9 Single Ultra-wide monitor up to 38"
+              16:9 Single monitor up to 32"
+              16:9 Triple monitors up to 3*29"
+              Weight up to 53lbs/ 24kg total
+              Height up to 17" /43cm With VESA holes centered
+              VESA Spec: 75x75mm ,100x 100mm</li>
+            <li>High Quality steel with powder coated paint</li>
+            <li>PU Leather & High Density Cold PU Foam</li>
+            <li>Tiltling to 160 degree,Monitor height</li>
+            <li>Keyboard open/close
+              Armrests open/close</li>
+            <li>Cup holder,headset hanger</li>
+            <li>Approx.352 lbs / 160kg</li>
+            <li>Approx.418 lbs / 190kg</li>
+            <li>61"x27"x45" 360lbs
+              155x70x120cm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+  </html>

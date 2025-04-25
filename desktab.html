@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Desktop</title>
+  <link rel="icon" href="img/des.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal:target {
+      display: flex;
+      
+    }
+    nav {
+      background: linear-gradient(to bottom, #2b0fc9, #6c0b6e);
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .divider {
+      margin: 0px auto;
+      width: 100%;
+      border: 2px solid #0c010c;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<nav class="bg-gray-900 text-white p-4">
+  <ul class="flex items-center justify-between">
+
+    <div class="flex space-x-6">
+      <li><a href="homepage.html" class="hover:text-gray-300" target="_self">Home</a></li>
+      <li><a href="Articles.html" class="hover:text-gray-300" target="_self">Articles</a></li>
+      <li><a href="About.html" class="hover:text-gray-300" target="_self">About us</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300" target="_self">Contact</a></li>
+    </div>
+
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <div x-show="open"
+           @click.away="open = false"
+           class="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg z-50 transition ease-out duration-150">
+        <a href="page.html" class="block px-4 py-2 hover:bg-red-100 text-red-600 font-semibold">
+          Log Out
+        </a>
+      </div>
+    </div>
+  </ul>
+</nav>
+<hr class="divider">
+
+<body class="bg-white text-gray-800">
+
+  <div class="bg-white p-4 border-b sticky top-0 z-10" >
+    <h1 class="text-xl font-bold">Product Articles</h1>
+  </div>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-4">Desktops Deals</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- Product Card 1 -->
+      <a href="#modal81" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/CORSAIR.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">CORSAIR VENGEANCE 5185 Gaming PC</h3>
+        <div class="text-red-500 font-bold">$2,599.99<span class="text-gray-400 line-through">$2,999.99</span></div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a href="#modal82" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Electrobot.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Electrobot Thunder Gaming Desktop</h3>
+        <div class="text-red-500 font-bold">$1,346.79<span class="text-gray-400 line-through">$2,346.79</span></div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a href="#modal83" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Skytech.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Skytech King 95 Gaming PC Desktop</h3>
+        <div class="text-red-500 font-bold">$1,878.85 <span class="text-gray-400 line-through">$2,878.85</span></div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a href="#modal84" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/ASUS.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">ASUS ROG Strix GT15 Gaming Desktop PC, Intel Core i7</h3>
+        <div class="text-red-500 font-bold">$1,315.63<span class="text-gray-400 line-through">$2,315.63</span></div>
+      </a>
+
+      <!-- Product Card 5 -->
+      <a href="#modal85" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/MSI.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">MSI Aegis R Gaming Desktop Computer</h3>
+        <div class="text-red-500 font-bold">$1,698.98<span class="text-gray-400 line-through">$2,698.98</span></div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a href="#modal86" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/iBUYPOWER.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">iBUYPOWER Y40 PRO Black Gaming PC Desktop Computer</h3>
+        <div class="text-red-500 font-bold">$2,649.99<span class="text-gray-400 line-through">$3,649.99</span></div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a href="#modal87" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/OMEN.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">HP OMEN 45L Gaming Desktop GT22-2003d PC</h3>
+        <div class="text-red-500 font-bold">$2,700<span class="text-gray-400 line-through">$3,000</span></div>
+      </a>
+
+      <!-- Product Card 8 -->
+      <a href="#modal88" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Alienware.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Alienware Aurora R16 GeForce RTX 4090</h3>
+        <div class="text-red-500 font-bold">$3,599.99<span class="text-gray-400 line-through">$3,999.99</span></div>
+      </a>
+
+      <!-- Product Card 9 -->
+      <a href="#modal89" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/Dell XPS.jpg" alt="ASUS Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Dell XPS 8920 XPS8920-7083BLK-PUS Tower Desktop</h3>
+        <div class="text-red-500 font-bold">$799.000<span class="text-gray-400 line-through">$809.99</span></div>
+      </a>
+
+      <!-- Product Card 10 -->
+      <a href="#modal90" class="border p-3 rounded-md relative block">
+        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">IN STOCK</span>
+        <img src="img/acer.jpg" alt="MSI Laptop" class="w-full h-40 object-contain mb-2">
+        <h3 class="text-sm">Acer Predator Orion 9000</h3>
+        <div class="text-red-500 font-bold"> $6,999<span class="text-gray-400 line-through">$7,999</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div id="modal81" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/CORSAIR.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">CORSAIR VENGEANCE 5185 Gaming PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,599.99 <span class="text-gray-400 line-through text-sm">$2,999.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Networking: Gigabit Ethernet, 802.11ac, Bluetooth 4.2</li>
+            <li>GPU: NVIDIA RTX 4090</li>
+            <li>CPU: Intel Core i7-9700K</li>
+           <li>DRAM: 16GB (2x8GB) DDR4-2666</li>
+            <li>Form Factor: Micro-ATX</li>
+            <li>Operating System: Windows 10 Home</li>
+            <li>Weight: 13.26</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal82" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Electrobot.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Electrobot Thunder Gaming Desktop</h2>
+          <p class="text-red-600 text-xl font-bold">
+          $1,346.79 <span class="text-gray-400 line-through text-sm">$2,346.79</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Graphics Card. RTX 3060 Ti.</li>
+            <li>>Motherboard. B550.</li>
+            <li>RAM. 16 GB 2X8GB.</li>
+            <li>Processor Speed. 12400F.</li>
+            <li>Hard Drive Size. 500GB NVME, 1 TB HDD.</li>
+            <li>Hard Drive Size Type. TB.</li>
+            <li>RAM Type. DDR4.</li>
+            <li>Processor Count.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Modal 3 -->
+  <div id="modal83" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Skytech.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Skytech King 95 Gaming PC Desktop</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,878.85 <span class="text-gray-400 line-through text-sm">$2,878.85</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Manufacturer Part#: ST-KING95-1356-W-NE</li>
+            <li>Processor: Ryzen 7 7800X3D 4.2 GHz (5GHz Turbo Boost) CPU</li>
+            <li>Memory: 32GB DDR5 RAM RGB Gaming Memory with Heat Spreader</li>
+            <li>Graphics: NVIDIA Geforce RTX 4070 Super 12GB GDDR6X Graphics Card (Brand may vary)</li>
+            <li>SSD: 1TB Gen4 NVMe M.2 SSD</li>
+            <li>Operating System: Microsoft windows 11 Home 64-bit</li>
+            <li>Case: King 95 Case - White</li>
+            <li>Wireless Support: 802.11AC</li>
+            <li>Fans: ARGB Fans for Maximum Cooling Performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal84" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/ASUS.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">ASUS ROG Strix GT15 Gaming Desktop PC, Intel Core i7</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,315.63 <span class="text-gray-400 line-through text-sm">$2,315.63</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>CPU: Intel Core i9-13900K</li>
+            <li>GPU: NVIDIA RTX 4080</li>
+            <li>RAM: 32GB DDR5</li>
+            <li>Storage: 1TB SSD + 2TB HDD</li>
+            <li>Style: HPs RGB glam + Acers thermal mastery</li>
+            <li>Why? Lights up the room and demolishes AAA games.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal85" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/MSI.jpg "alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">MSI Aegis R Gaming Desktop Computer </h2>
+          <p class="text-red-600 text-xl font-bold">
+            $1,698.98 <span class="text-gray-400 line-through text-sm">$2,698.98</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Processor: Intel Core i7-14700F, 13th Gen Intel Core i7 or 14th Gen Intel Core i9</li>
+            <li>Memory: 16GB or 32GB DDR5 RAM</li>
+            <li>Storage: 1TB or 2TB M.2 NVMe SSD</li>
+            <li>Graphics: NVIDIA GeForce RTX 4060, RTX 4070, or RTX 4070 Super</li>
+            <li>Operating System: Windows 11 Home</li>
+            <li>Case: Gungnir series case with ARGB lighting</li>
+            <li>Cooling: Air cooler or liquid cooler depending on the model</li>
+            <li>Power Supply: 650W or 750W 80+ Gold</li>
+            <li>Ports: 3x DisplayPort, 1x HDMI, multiple USB ports</li>
+            <li>Networking: 2.5Gb Ethernet, Wi-Fi 6 or Wi-Fi 7</li>
+            <li>Other: Bluetooth 5.1 or 5.4</li>
+          </ul>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal86" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/iBUYPOWER.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">iBUYPOWER Y40 PRO Black Gaming PC Desktop Computer</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $2,649.99 <span class="text-gray-400 line-through text-sm">$3,649.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Operating System: Windows 11 Home</li>
+            <li>CPU Model: Intel Core Ultra 7</li>
+            <li>CPU Speed: 5.4 GHz</li>
+            <li>CPU Speed: 5.4 GHz</li>
+            <li>Graphics Coprocessor: NVIDIA GeForce RTX 4060 Ti 8GB</li>
+            <li>Memory Storage Capacity: 2 TB</li>
+            <li>Memory Slots Available: 4</li>
+            <li>Specific Uses For Product: Gaming</li>
+            <li>Personal computer design type: Computer Tower</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal87" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/OMEN.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">HP OMEN 45L Gaming Desktop GT22-2003d PC</h2>
+          <p class="text-red-600 text-xl font-bold">
+           $2,700 <span class="text-gray-400 line-through text-sm">$3,000</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <li>Intel® Core™ i7 14th generation processor</li>
+            <li>Windows 11 Home Single Language in S mode</li>
+            <li>Kingston FURY 16 GB DDR5-5200 MHz XMP RGB Heatsink RAM</li>
+            <il>1 TB WD Black PCIe® Gen4 NVMe™ TLC M.2 SSD Hard drive</il>
+            <il>NVIDIA® GeForce RTX™ 4080</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal88" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Alienware.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Alienware Aurora R16 GeForce RTX 4090</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $3,599.99 <span class="text-gray-400 line-through text-sm">$3,999.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Intel® Core™ i9 14900KF (68 MB cache, 24 cores, up to 6.0 GHz P-Core Thermal Velocity)</il>
+            <il>Windows 11 Home, English, French, Spanish</il>
+            <il>NVIDIA® GeForce RTX™ 4090, 24 GB GDDR6X</il>
+            <il>64GB Dual Channel DDR5 (2x 32GB - Green) 5200 MT/s</il>
+            <il>2 TB, M.2, PCIe NVMe, SSD</il>
+            <il>1000W Platinum Rated PSU, 240mm Liquid-Cooled CPU & Clear Side Panel</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal89" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/Dell XPS.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Dell XPS 8920 XPS8920-7083BLK-PUS Tower Desktop</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $799.00 <span class="text-gray-400 line-through text-sm">$809.99</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>11th Gen Intel Core i7-11700 8-core up to 4.9 GHz CPU</il>
+            <il>32GB RAM, 1TB SSD</il>
+            <il>Intel UHD Graphics 750</il>
+            <il>Killer Wi-Fi 6</il>
+            <il>DVD Burner</il>
+            <il>Windows 11 Pro</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal90" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg relative">
+      <a href="#" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</a>
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <img src="img/acer.jpg" alt="Laptop Full View" class="w-64 object-contain">
+        <div>
+          <h2 class="text-lg font-bold">Acer Predator GalaxyX</h2>
+          <p class="text-red-600 text-xl font-bold">
+            $6,999 <span class="text-gray-400 line-through text-sm">$7,999</span>
+          </p>
+          <ul class="text-sm mt-2 list-disc pl-5 space-y-1">
+            <il>Intel® Core™ i7-14700HX processor.</il>
+            <il>16GB RAM.</il>
+            <il>512GB SSD.</il>
+            <il>16.0" display.</il>
+            <il>NVIDIA® GeForce RTX™ 4060.</il>
+            <il>FineTip RGB-backlight keyboard.</il>
+            <il>Windows 11 Home.</il>
+            <il>2 Years Warranty.</il>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
